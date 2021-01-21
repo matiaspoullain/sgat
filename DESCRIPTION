@@ -26,3 +26,5 @@ Imports:
     plyr,
     binman,
     utils
+URL: https://github.com/matiaspoullain/sgat
+BugReports: https://github.com/matiaspoullain/sgat/issues
