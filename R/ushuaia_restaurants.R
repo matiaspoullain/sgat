@@ -1,7 +1,14 @@
+#' Retrieves a vector of Ushuaian's restaurants and bar's names and adresses
+#'
+#' @return Vector of restaurants and bars in Ushuaia, Tierra del Fuego, Argentina
+#' @export
+#'
+#' @examples
+#' ushiaia_restaurants()
 ushuaia_restaurants <- function(){
   address <- "https://www.interpatagonia.com/ushuaia/comidas.html"
-  txt <- getURL(address)
-  entre <- ex_between(txt, '<span itemprop="name"> ', '</span> </p> <p class="')[[1]]
+  txt <- RCurl::getURL(address)
+  entre <- qdapRegex::ex_between(txt, '<span itemprop="name"> ', '</span> </p> <p class="')[[1]]
   nombre.lugar <- sub("</span>.*", "", entre)
   nombre.lugar <- nombre.lugar[2:length(nombre.lugar)]
   nombre.lugar <- trimws(nombre.lugar) #saca los espacios de adelante y atras

@@ -1,16 +1,28 @@
 Package: sgat
-Title: What the Package Does (One Line, Title Case)
+Title: A friendly and forward way for extracting information from Google's "Popular times", returning it as dataframes and saving it as .csv files.
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Matias",
+           family = "Poullain",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "matias.poullain@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: Once you've identified a real life place, such as a shop, a restaurant, a bar, etc. use this package to simulate a Google search and retrieve its "Popular Times" and geolocation information and save them in csv files. This package also downloads a list of restaurants and bars in Ushuaia, Argentina.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat (>= 2.0.0)
+Config/testthat/edition: 2
+Imports: 
+    RSelenium,
+    RCurl,
+    qdapRegex,
+    dplyr,
+    stringr,
+    data.table,
+    plyr,
+    binman,
+    utils
