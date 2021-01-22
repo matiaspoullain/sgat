@@ -56,10 +56,10 @@ initialization_sgat()
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 9568
+#> [1] 17700
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofile9vfqlI"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileeBqoZr"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -103,14 +103,14 @@ initialization_sgat()
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "601750a1-cd65-4ea3-8f02-43a921cf6793"
+#> [1] "01e9d23f-9efb-453f-85ea-25efd5b5cf13"
 #> 
 #> $id
-#> [1] "601750a1-cd65-4ea3-8f02-43a921cf6793"
+#> [1] "01e9d23f-9efb-453f-85ea-25efd5b5cf13"
 ```
 
 This package was created to use it on restaurants, bars, etc… located in
-Ushuaia city, Tierra del Fuego, Argentina. You can retrieve a vector
+Ushuaia city, Tierra del Fuego, Argentina. You can retrieve a vector of
 them with the next code:
 
 ``` r
@@ -153,10 +153,10 @@ bar_1 <- sgat(restaurants[1], carpeta.guardado = "CSVs Concurrencias")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 22688
+#> [1] 29540
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileLuhLy0"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilegYmgQF"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -200,10 +200,10 @@ bar_1 <- sgat(restaurants[1], carpeta.guardado = "CSVs Concurrencias")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "2ce3df4a-2c9f-4ef5-b7d1-a89051a41ee1"
+#> [1] "24636c1d-b85b-410f-ac87-257da09bad13"
 #> 
 #> $id
-#> [1] "2ce3df4a-2c9f-4ef5-b7d1-a89051a41ee1"
+#> [1] "24636c1d-b85b-410f-ac87-257da09bad13"
 head(bar_1)
 #> [1] "Sin datos de concurrencia"
 ```
@@ -236,10 +236,10 @@ bar_2 <- sgat(restaurants[2])
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 17680
+#> [1] 9296
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileiK4DSL"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofile7mFSz5"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -283,10 +283,10 @@ bar_2 <- sgat(restaurants[2])
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "5cad93e7-ecfd-4dc2-846e-0b5828ae4a6e"
+#> [1] "b25af7b5-c264-4481-b3f8-7376115d7b59"
 #> 
 #> $id
-#> [1] "5cad93e7-ecfd-4dc2-846e-0b5828ae4a6e"
+#> [1] "b25af7b5-c264-4481-b3f8-7376115d7b59"
 bar_2
 #> [1] "Sin datos de concurrencia"
 ```
@@ -320,10 +320,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 27036
+#> [1] 24796
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilexXRTSQ"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileckLznJ"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -367,10 +367,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "1e748e7a-d37e-4920-afdc-d3d4609bff96"
+#> [1] "da22ccc4-d6c7-4ec5-a409-83cb69252fdb"
 #> 
 #> $id
-#> [1] "1e748e7a-d37e-4920-afdc-d3d4609bff96"
+#> [1] "da22ccc4-d6c7-4ec5-a409-83cb69252fdb"
 #> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
@@ -395,10 +395,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 12544
+#> [1] 29416
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilekGrLV2"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileBL9NCe"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -442,10 +442,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "8b26e28e-099f-435e-93e8-6a6a610e2b9a"
+#> [1] "93491bf4-571b-405f-b5f6-0041731965ff"
 #> 
 #> $id
-#> [1] "8b26e28e-099f-435e-93e8-6a6a610e2b9a"
+#> [1] "93491bf4-571b-405f-b5f6-0041731965ff"
 #> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
@@ -470,10 +470,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 22460
+#> [1] 15028
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileBI5vAk"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileyYoJtO"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -517,10 +517,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "10f44b8a-2274-4fd8-a2e9-b7ee9301543c"
+#> [1] "f0709f3a-0da1-4eaf-b4c7-2bbe4b6ccab1"
 #> 
 #> $id
-#> [1] "10f44b8a-2274-4fd8-a2e9-b7ee9301543c"
+#> [1] "f0709f3a-0da1-4eaf-b4c7-2bbe4b6ccab1"
 #> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
@@ -545,10 +545,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 10312
+#> [1] 21456
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileizHVRW"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilezNcrqs"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -592,10 +592,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "4ec4b84d-738f-40ee-9495-f0a8f3e4ed67"
+#> [1] "91951f52-2a78-4cc5-8c39-b686f4214fa1"
 #> 
 #> $id
-#> [1] "4ec4b84d-738f-40ee-9495-f0a8f3e4ed67"
+#> [1] "91951f52-2a78-4cc5-8c39-b686f4214fa1"
 #> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
@@ -620,10 +620,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 19356
+#> [1] 7648
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilelVpdgV"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilevgLZbF"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -667,10 +667,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "1f57f6aa-d21e-4a3a-be43-66be77814823"
+#> [1] "f646f27c-09d8-49e9-9bfe-38c53c7a570c"
 #> 
 #> $id
-#> [1] "1f57f6aa-d21e-4a3a-be43-66be77814823"
+#> [1] "f646f27c-09d8-49e9-9bfe-38c53c7a570c"
 #> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
@@ -695,10 +695,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 20988
+#> [1] 4204
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilepfdJYR"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofile6zo0NU"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -742,10 +742,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "0c658f55-4260-4520-8d21-026211712116"
+#> [1] "8b4edd54-004c-4bdd-b2ff-34cdffe16477"
 #> 
 #> $id
-#> [1] "0c658f55-4260-4520-8d21-026211712116"
+#> [1] "8b4edd54-004c-4bdd-b2ff-34cdffe16477"
 #> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
@@ -770,10 +770,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 13176
+#> [1] 1800
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileeHGUpy"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilem1Njxg"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -817,10 +817,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "3ec78330-c3f9-41e7-8dbe-ccf8022cd1da"
+#> [1] "53cd36ce-ebd8-4c19-a347-292467198090"
 #> 
 #> $id
-#> [1] "3ec78330-c3f9-41e7-8dbe-ccf8022cd1da"
+#> [1] "53cd36ce-ebd8-4c19-a347-292467198090"
 head(bar_3)
 #>                                              lugar   dia hora concurrencia
 #> 1 coutume, 47 rue de babylone, 75007 paris, france lunes    6         0.00
