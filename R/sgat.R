@@ -1,8 +1,8 @@
 #' Iteration over sgat_day on every day of the week and finally save the retrieved data as a csv file
 #'
-#' @param lugar.a.buscar
-#' @param tiempo.espera
-#' @param carpeta.guardado
+#' @param lugar.a.buscar What you want to search in Google
+#' @param tiempo.espera Time measure of how much time you think it's sufficient given your internet connection to load a Google search page and not finding the information,
+#' @param carpeta.guardado Name of the directory where the csv files will be saved. If the directory doesn't exist, it will be created automatically.
 #'
 #' @return dataframe with retrieved information for all weekdays
 #' @export

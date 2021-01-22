@@ -33,38 +33,6 @@ Always start by initializing the driver, once per session:
 ``` r
 library(sgat)
 initialization_sgat()
-#> checking Selenium Server versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
-#> checking chromedriver versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
-#> checking geckodriver versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
-#> checking phantomjs versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
-#> checking Selenium Server versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
-#> checking chromedriver versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
-#> checking geckodriver versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
-#> checking phantomjs versions:
-#> BEGIN: PREDOWNLOAD
-#> BEGIN: DOWNLOAD
-#> BEGIN: POSTDOWNLOAD
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
@@ -88,10 +56,10 @@ initialization_sgat()
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 22820
+#> [1] 9568
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilevAceA3"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofile9vfqlI"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -135,10 +103,10 @@ initialization_sgat()
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "1b56ada9-53eb-4578-8ac9-4b675ca87df7"
+#> [1] "601750a1-cd65-4ea3-8f02-43a921cf6793"
 #> 
 #> $id
-#> [1] "1b56ada9-53eb-4578-8ac9-4b675ca87df7"
+#> [1] "601750a1-cd65-4ea3-8f02-43a921cf6793"
 ```
 
 This package was created to use it on restaurants, bars, etc… located in
@@ -148,12 +116,12 @@ them with the next code:
 ``` r
 restaurants <- ushuaia_restaurants()
 head(restaurants)
-#> [1] "Kuar 1900 Bar, San Martín 471, Ushuaia"            
-#> [2] "Moustacchio, San Martín 298, Ushuaia"              
+#> [1] "Moustacchio, San Martín 298, Ushuaia"              
+#> [2] "Prana, Av Maipu 505, Ushuaia"                      
 #> [3] "Kuar, Av Perito Moreno 2232, Ushuaia"              
 #> [4] "La Cabaña Casa de Té, Luis F Martial 3560, Ushuaia"
-#> [5] "La Cabaña, Luis Fernando Martial 3550, Ushuaia"    
-#> [6] "Hostal del Bosque, Magallanes 709, Ushuaia"
+#> [5] "Hostal del Bosque, Magallanes 709, Ushuaia"        
+#> [6] "Kuar 1900, San Martín 471, Ushuaia"
 ```
 
 You can retrieve the information from some of these restaurants. A csv
@@ -185,10 +153,10 @@ bar_1 <- sgat(restaurants[1], carpeta.guardado = "CSVs Concurrencias")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 11644
+#> [1] 22688
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileRQRVey"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileLuhLy0"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -232,503 +200,12 @@ bar_1 <- sgat(restaurants[1], carpeta.guardado = "CSVs Concurrencias")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "942b693b-94cb-436b-a1a9-9c306fead6d5"
+#> [1] "2ce3df4a-2c9f-4ef5-b7d1-a89051a41ee1"
 #> 
 #> $id
-#> [1] "942b693b-94cb-436b-a1a9-9c306fead6d5"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-#> Warning in if (!is.na(concurrencia)) {: la condición tiene longitud > 1 y sólo
-#> el primer elemento será usado
-#> [1] "Connecting to remote server"
-#> $acceptInsecureCerts
-#> [1] FALSE
-#> 
-#> $browserName
-#> [1] "firefox"
-#> 
-#> $browserVersion
-#> [1] "84.0.2"
-#> 
-#> $`moz:accessibilityChecks`
-#> [1] FALSE
-#> 
-#> $`moz:buildID`
-#> [1] "20210105180113"
-#> 
-#> $`moz:geckodriverVersion`
-#> [1] "0.28.0"
-#> 
-#> $`moz:headless`
-#> [1] FALSE
-#> 
-#> $`moz:processID`
-#> [1] 21052
-#> 
-#> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileRKkaqN"
-#> 
-#> $`moz:shutdownTimeout`
-#> [1] 60000
-#> 
-#> $`moz:useNonSpecCompliantPointerOrigin`
-#> [1] FALSE
-#> 
-#> $`moz:webdriverClick`
-#> [1] TRUE
-#> 
-#> $pageLoadStrategy
-#> [1] "normal"
-#> 
-#> $platformName
-#> [1] "windows"
-#> 
-#> $platformVersion
-#> [1] "10.0"
-#> 
-#> $rotatable
-#> [1] FALSE
-#> 
-#> $setWindowRect
-#> [1] TRUE
-#> 
-#> $strictFileInteractability
-#> [1] FALSE
-#> 
-#> $timeouts
-#> $timeouts$implicit
-#> [1] 0
-#> 
-#> $timeouts$pageLoad
-#> [1] 300000
-#> 
-#> $timeouts$script
-#> [1] 30000
-#> 
-#> 
-#> $unhandledPromptBehavior
-#> [1] "dismiss and notify"
-#> 
-#> $webdriver.remote.sessionid
-#> [1] "9653c7a3-0dfb-4915-bcc4-8b8964c5d16b"
-#> 
-#> $id
-#> [1] "9653c7a3-0dfb-4915-bcc4-8b8964c5d16b"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-#> [1] "Connecting to remote server"
-#> $acceptInsecureCerts
-#> [1] FALSE
-#> 
-#> $browserName
-#> [1] "firefox"
-#> 
-#> $browserVersion
-#> [1] "84.0.2"
-#> 
-#> $`moz:accessibilityChecks`
-#> [1] FALSE
-#> 
-#> $`moz:buildID`
-#> [1] "20210105180113"
-#> 
-#> $`moz:geckodriverVersion`
-#> [1] "0.28.0"
-#> 
-#> $`moz:headless`
-#> [1] FALSE
-#> 
-#> $`moz:processID`
-#> [1] 15588
-#> 
-#> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileZ5qQoB"
-#> 
-#> $`moz:shutdownTimeout`
-#> [1] 60000
-#> 
-#> $`moz:useNonSpecCompliantPointerOrigin`
-#> [1] FALSE
-#> 
-#> $`moz:webdriverClick`
-#> [1] TRUE
-#> 
-#> $pageLoadStrategy
-#> [1] "normal"
-#> 
-#> $platformName
-#> [1] "windows"
-#> 
-#> $platformVersion
-#> [1] "10.0"
-#> 
-#> $rotatable
-#> [1] FALSE
-#> 
-#> $setWindowRect
-#> [1] TRUE
-#> 
-#> $strictFileInteractability
-#> [1] FALSE
-#> 
-#> $timeouts
-#> $timeouts$implicit
-#> [1] 0
-#> 
-#> $timeouts$pageLoad
-#> [1] 300000
-#> 
-#> $timeouts$script
-#> [1] 30000
-#> 
-#> 
-#> $unhandledPromptBehavior
-#> [1] "dismiss and notify"
-#> 
-#> $webdriver.remote.sessionid
-#> [1] "fceea1f9-dfa5-4228-ab40-bc21a8d285e4"
-#> 
-#> $id
-#> [1] "fceea1f9-dfa5-4228-ab40-bc21a8d285e4"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-#> [1] "Connecting to remote server"
-#> $acceptInsecureCerts
-#> [1] FALSE
-#> 
-#> $browserName
-#> [1] "firefox"
-#> 
-#> $browserVersion
-#> [1] "84.0.2"
-#> 
-#> $`moz:accessibilityChecks`
-#> [1] FALSE
-#> 
-#> $`moz:buildID`
-#> [1] "20210105180113"
-#> 
-#> $`moz:geckodriverVersion`
-#> [1] "0.28.0"
-#> 
-#> $`moz:headless`
-#> [1] FALSE
-#> 
-#> $`moz:processID`
-#> [1] 2936
-#> 
-#> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileGjtA04"
-#> 
-#> $`moz:shutdownTimeout`
-#> [1] 60000
-#> 
-#> $`moz:useNonSpecCompliantPointerOrigin`
-#> [1] FALSE
-#> 
-#> $`moz:webdriverClick`
-#> [1] TRUE
-#> 
-#> $pageLoadStrategy
-#> [1] "normal"
-#> 
-#> $platformName
-#> [1] "windows"
-#> 
-#> $platformVersion
-#> [1] "10.0"
-#> 
-#> $rotatable
-#> [1] FALSE
-#> 
-#> $setWindowRect
-#> [1] TRUE
-#> 
-#> $strictFileInteractability
-#> [1] FALSE
-#> 
-#> $timeouts
-#> $timeouts$implicit
-#> [1] 0
-#> 
-#> $timeouts$pageLoad
-#> [1] 300000
-#> 
-#> $timeouts$script
-#> [1] 30000
-#> 
-#> 
-#> $unhandledPromptBehavior
-#> [1] "dismiss and notify"
-#> 
-#> $webdriver.remote.sessionid
-#> [1] "30fc8e12-dd18-49fb-a5c2-060989be0843"
-#> 
-#> $id
-#> [1] "30fc8e12-dd18-49fb-a5c2-060989be0843"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-#> [1] "Connecting to remote server"
-#> $acceptInsecureCerts
-#> [1] FALSE
-#> 
-#> $browserName
-#> [1] "firefox"
-#> 
-#> $browserVersion
-#> [1] "84.0.2"
-#> 
-#> $`moz:accessibilityChecks`
-#> [1] FALSE
-#> 
-#> $`moz:buildID`
-#> [1] "20210105180113"
-#> 
-#> $`moz:geckodriverVersion`
-#> [1] "0.28.0"
-#> 
-#> $`moz:headless`
-#> [1] FALSE
-#> 
-#> $`moz:processID`
-#> [1] 26408
-#> 
-#> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileJx40LI"
-#> 
-#> $`moz:shutdownTimeout`
-#> [1] 60000
-#> 
-#> $`moz:useNonSpecCompliantPointerOrigin`
-#> [1] FALSE
-#> 
-#> $`moz:webdriverClick`
-#> [1] TRUE
-#> 
-#> $pageLoadStrategy
-#> [1] "normal"
-#> 
-#> $platformName
-#> [1] "windows"
-#> 
-#> $platformVersion
-#> [1] "10.0"
-#> 
-#> $rotatable
-#> [1] FALSE
-#> 
-#> $setWindowRect
-#> [1] TRUE
-#> 
-#> $strictFileInteractability
-#> [1] FALSE
-#> 
-#> $timeouts
-#> $timeouts$implicit
-#> [1] 0
-#> 
-#> $timeouts$pageLoad
-#> [1] 300000
-#> 
-#> $timeouts$script
-#> [1] 30000
-#> 
-#> 
-#> $unhandledPromptBehavior
-#> [1] "dismiss and notify"
-#> 
-#> $webdriver.remote.sessionid
-#> [1] "d634bfd0-2c02-4619-8bcb-a5482ce02979"
-#> 
-#> $id
-#> [1] "d634bfd0-2c02-4619-8bcb-a5482ce02979"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-#> [1] "Connecting to remote server"
-#> $acceptInsecureCerts
-#> [1] FALSE
-#> 
-#> $browserName
-#> [1] "firefox"
-#> 
-#> $browserVersion
-#> [1] "84.0.2"
-#> 
-#> $`moz:accessibilityChecks`
-#> [1] FALSE
-#> 
-#> $`moz:buildID`
-#> [1] "20210105180113"
-#> 
-#> $`moz:geckodriverVersion`
-#> [1] "0.28.0"
-#> 
-#> $`moz:headless`
-#> [1] FALSE
-#> 
-#> $`moz:processID`
-#> [1] 8560
-#> 
-#> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileTYVGuW"
-#> 
-#> $`moz:shutdownTimeout`
-#> [1] 60000
-#> 
-#> $`moz:useNonSpecCompliantPointerOrigin`
-#> [1] FALSE
-#> 
-#> $`moz:webdriverClick`
-#> [1] TRUE
-#> 
-#> $pageLoadStrategy
-#> [1] "normal"
-#> 
-#> $platformName
-#> [1] "windows"
-#> 
-#> $platformVersion
-#> [1] "10.0"
-#> 
-#> $rotatable
-#> [1] FALSE
-#> 
-#> $setWindowRect
-#> [1] TRUE
-#> 
-#> $strictFileInteractability
-#> [1] FALSE
-#> 
-#> $timeouts
-#> $timeouts$implicit
-#> [1] 0
-#> 
-#> $timeouts$pageLoad
-#> [1] 300000
-#> 
-#> $timeouts$script
-#> [1] 30000
-#> 
-#> 
-#> $unhandledPromptBehavior
-#> [1] "dismiss and notify"
-#> 
-#> $webdriver.remote.sessionid
-#> [1] "321308fc-510a-49f9-83ba-30ab04a15ffd"
-#> 
-#> $id
-#> [1] "321308fc-510a-49f9-83ba-30ab04a15ffd"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-#> [1] "Connecting to remote server"
-#> $acceptInsecureCerts
-#> [1] FALSE
-#> 
-#> $browserName
-#> [1] "firefox"
-#> 
-#> $browserVersion
-#> [1] "84.0.2"
-#> 
-#> $`moz:accessibilityChecks`
-#> [1] FALSE
-#> 
-#> $`moz:buildID`
-#> [1] "20210105180113"
-#> 
-#> $`moz:geckodriverVersion`
-#> [1] "0.28.0"
-#> 
-#> $`moz:headless`
-#> [1] FALSE
-#> 
-#> $`moz:processID`
-#> [1] 19008
-#> 
-#> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilegE3Af1"
-#> 
-#> $`moz:shutdownTimeout`
-#> [1] 60000
-#> 
-#> $`moz:useNonSpecCompliantPointerOrigin`
-#> [1] FALSE
-#> 
-#> $`moz:webdriverClick`
-#> [1] TRUE
-#> 
-#> $pageLoadStrategy
-#> [1] "normal"
-#> 
-#> $platformName
-#> [1] "windows"
-#> 
-#> $platformVersion
-#> [1] "10.0"
-#> 
-#> $rotatable
-#> [1] FALSE
-#> 
-#> $setWindowRect
-#> [1] TRUE
-#> 
-#> $strictFileInteractability
-#> [1] FALSE
-#> 
-#> $timeouts
-#> $timeouts$implicit
-#> [1] 0
-#> 
-#> $timeouts$pageLoad
-#> [1] 300000
-#> 
-#> $timeouts$script
-#> [1] 30000
-#> 
-#> 
-#> $unhandledPromptBehavior
-#> [1] "dismiss and notify"
-#> 
-#> $webdriver.remote.sessionid
-#> [1] "2a749fc5-c9cd-46bf-9ae2-7c5a97a1ce38"
-#> 
-#> $id
-#> [1] "2a749fc5-c9cd-46bf-9ae2-7c5a97a1ce38"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "2ce3df4a-2c9f-4ef5-b7d1-a89051a41ee1"
 head(bar_1)
-#>                                    lugar   dia hora concurrencia   latitud
-#> 1 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    6            0 -54.80635
-#> 2 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    7            0 -54.80635
-#> 3 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    8            0 -54.80635
-#> 4 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    9            0 -54.80635
-#> 5 Kuar 1900 Bar, San Martín 471, Ushuaia lunes   10            0 -54.80635
-#> 6 Kuar 1900 Bar, San Martín 471, Ushuaia lunes   11            0 -54.80635
-#>    longitud fecha.de.busqueda
-#> 1 -68.30474        2021-01-21
-#> 2 -68.30474        2021-01-21
-#> 3 -68.30474        2021-01-21
-#> 4 -68.30474        2021-01-21
-#> 5 -68.30474        2021-01-21
-#> 6 -68.30474        2021-01-21
+#> [1] "Sin datos de concurrencia"
 ```
 
 Although, some other Google searches doesn’t have the wanted
@@ -759,10 +236,10 @@ bar_2 <- sgat(restaurants[2])
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 25228
+#> [1] 17680
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileGIJUnD"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileiK4DSL"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -806,27 +283,10 @@ bar_2 <- sgat(restaurants[2])
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "fb5a20ee-7490-4b21-8718-ec178bb039ca"
+#> [1] "5cad93e7-ecfd-4dc2-846e-0b5828ae4a6e"
 #> 
 #> $id
-#> [1] "fb5a20ee-7490-4b21-8718-ec178bb039ca"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "5cad93e7-ecfd-4dc2-846e-0b5828ae4a6e"
 bar_2
 #> [1] "Sin datos de concurrencia"
 ```
@@ -860,10 +320,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 17440
+#> [1] 27036
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileflaOJ6"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilexXRTSQ"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -907,14 +367,11 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "6bbf4fa4-19b8-4e29-8f43-78a91a08dca8"
+#> [1] "1e748e7a-d37e-4920-afdc-d3d4609bff96"
 #> 
 #> $id
-#> [1] "6bbf4fa4-19b8-4e29-8f43-78a91a08dca8"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-#> Warning in if (!is.na(concurrencia)) {: la condición tiene longitud > 1 y sólo
-#> el primer elemento será usado
+#> [1] "1e748e7a-d37e-4920-afdc-d3d4609bff96"
+#> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
@@ -938,10 +395,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 19048
+#> [1] 12544
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileHBbaVo"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilekGrLV2"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -985,15 +442,11 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "aa2b6d72-749e-4968-bca6-2a00a61edf2a"
+#> [1] "8b26e28e-099f-435e-93e8-6a6a610e2b9a"
 #> 
 #> $id
-#> [1] "aa2b6d72-749e-4968-bca6-2a00a61edf2a"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "8b26e28e-099f-435e-93e8-6a6a610e2b9a"
+#> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
@@ -1017,10 +470,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 23560
+#> [1] 22460
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileK06Muw"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileBI5vAk"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -1064,15 +517,11 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "7a0dc360-4613-4d16-a43f-c985ff54a295"
+#> [1] "10f44b8a-2274-4fd8-a2e9-b7ee9301543c"
 #> 
 #> $id
-#> [1] "7a0dc360-4613-4d16-a43f-c985ff54a295"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "10f44b8a-2274-4fd8-a2e9-b7ee9301543c"
+#> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
@@ -1096,10 +545,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 14296
+#> [1] 10312
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileFE4ahe"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileizHVRW"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -1143,15 +592,11 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "e6ec753e-2c19-4bc9-b5e3-6f36cecbbbaa"
+#> [1] "4ec4b84d-738f-40ee-9495-f0a8f3e4ed67"
 #> 
 #> $id
-#> [1] "e6ec753e-2c19-4bc9-b5e3-6f36cecbbbaa"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "4ec4b84d-738f-40ee-9495-f0a8f3e4ed67"
+#> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
@@ -1175,10 +620,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 28732
+#> [1] 19356
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileOYvmww"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilelVpdgV"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -1222,15 +667,11 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "ffc66b39-f79b-45f5-9dff-518eb0fc6d7a"
+#> [1] "1f57f6aa-d21e-4a3a-be43-66be77814823"
 #> 
 #> $id
-#> [1] "ffc66b39-f79b-45f5-9dff-518eb0fc6d7a"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "1f57f6aa-d21e-4a3a-be43-66be77814823"
+#> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
@@ -1254,10 +695,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 29596
+#> [1] 20988
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileR2HAZc"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofilepfdJYR"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -1301,15 +742,11 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "9b51032f-1b8c-499e-a7f6-da221de83885"
+#> [1] "0c658f55-4260-4520-8d21-026211712116"
 #> 
 #> $id
-#> [1] "9b51032f-1b8c-499e-a7f6-da221de83885"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "0c658f55-4260-4520-8d21-026211712116"
+#> 
 #> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
@@ -1333,10 +770,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 19808
+#> [1] 13176
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileRB4StZ"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileeHGUpy"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -1380,15 +817,10 @@ bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "1579128f-b939-49a5-9763-cc8530bdf833"
+#> [1] "3ec78330-c3f9-41e7-8dbe-ccf8022cd1da"
 #> 
 #> $id
-#> [1] "1579128f-b939-49a5-9763-cc8530bdf833"
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
-
-#> Warning in while (x <= tiempo.espera & replace(apertura, is.na(apertura), : la
-#> condición tiene longitud > 1 y sólo el primer elemento será usado
+#> [1] "3ec78330-c3f9-41e7-8dbe-ccf8022cd1da"
 head(bar_3)
 #>                                              lugar   dia hora concurrencia
 #> 1 coutume, 47 rue de babylone, 75007 paris, france lunes    6         0.00
@@ -1398,10 +830,10 @@ head(bar_3)
 #> 5 coutume, 47 rue de babylone, 75007 paris, france lunes   10        34.50
 #> 6 coutume, 47 rue de babylone, 75007 paris, france lunes   11        32.25
 #>    latitud longitud fecha.de.busqueda
-#> 1 48.85166 2.318299        2021-01-21
-#> 2 48.85166 2.318299        2021-01-21
-#> 3 48.85166 2.318299        2021-01-21
-#> 4 48.85166 2.318299        2021-01-21
-#> 5 48.85166 2.318299        2021-01-21
-#> 6 48.85166 2.318299        2021-01-21
+#> 1 48.85166 2.318299        2021-01-22
+#> 2 48.85166 2.318299        2021-01-22
+#> 3 48.85166 2.318299        2021-01-22
+#> 4 48.85166 2.318299        2021-01-22
+#> 5 48.85166 2.318299        2021-01-22
+#> 6 48.85166 2.318299        2021-01-22
 ```

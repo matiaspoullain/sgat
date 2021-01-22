@@ -11,7 +11,11 @@ sgat(
 )
 }
 \arguments{
-\item{carpeta.guardado}{}
+\item{lugar.a.buscar}{What you want to search in Google}
+
+\item{tiempo.espera}{Time measure of how much time you think it's sufficient given your internet connection to load a Google search page and not finding the information,}
+
+\item{carpeta.guardado}{Name of the directory where the csv files will be saved. If the directory doesn't exist, it will be created automatically.}
 }
 \value{
 dataframe with retrieved information for all weekdays

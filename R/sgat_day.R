@@ -1,8 +1,8 @@
 #' Opens firefox, searches in Google lugar.a.buscar place on the dia.semana weekday. Then it retrieves the "Popular Times" and geolocation information. If the search finds said information, the function returns a data.frame, if not, NULL
 #'
-#' @param lugar.a.buscar
-#' @param dia.semana
-#' @param tiempo.espera
+#' @param lugar.a.buscar What you want to search in Google
+#' @param dia.semana Day of the week from when you want to retrieve the "Popular Times" information
+#' @param tiempo.espera Time measure of how much time you think it's sufficient given your internet connection to load a Google search page and not finding the information,
 #'
 #' @return dataframe with retrieved information for single weekday
 #' @export

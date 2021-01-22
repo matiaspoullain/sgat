@@ -7,7 +7,11 @@
 sgat_day(lugar.a.buscar, dia.semana, tiempo.espera = 10)
 }
 \arguments{
-\item{tiempo.espera}{}
+\item{lugar.a.buscar}{What you want to search in Google}
+
+\item{dia.semana}{Day of the week from when you want to retrieve the "Popular Times" information}
+
+\item{tiempo.espera}{Time measure of how much time you think it's sufficient given your internet connection to load a Google search page and not finding the information,}
 }
 \value{
 dataframe with retrieved information for single weekday

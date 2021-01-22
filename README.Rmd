@@ -38,35 +38,35 @@ devtools::install_github("matiaspoullain/sgat")
 
 Always start by initializing the driver, once per session:
 
-```{r example}
+```{r example, message=FALSE, warning=FALSE}
 library(sgat)
 initialization_sgat()
 ```
 
 This package was created to use it on restaurants, bars, etc... located in Ushuaia city, Tierra del Fuego, Argentina. You can retrieve a vector them with the next code:
 
-```{r restaurants}
+```{r restaurants, message=FALSE, warning=FALSE}
 restaurants <- ushuaia_restaurants()
 head(restaurants)
 ```
 
 You can retrieve the information from some of these restaurants. A csv file will be created in the "CSVs Concurrencias" directory by default. The file's name is the string you looked for.
 
-```{r bar 1}
+```{r bar 1, message=FALSE, warning=FALSE}
 bar_1 <- sgat(restaurants[1], carpeta.guardado = "CSVs Concurrencias")
 head(bar_1)
 ```
 
 Although, some other Google searches doesn't have the wanted information. In that case, NULL is returned:
 
-```{r bar 2}
+```{r bar 2, message=FALSE, warning=FALSE}
 bar_2 <- sgat(restaurants[2])
 bar_2
 ```
 
 The searches are not restricted to Ushuaia, but remember to be specific in your searches, specially if the location you are lookinn for is far away:
 
-```{r bar 3}
+```{r bar 3, message=FALSE, warning=FALSE}
 bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 head(bar_3)
 ```
