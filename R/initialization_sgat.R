@@ -5,10 +5,10 @@
 #'
 #' @examples
 #' initialization_sgat()
-initialization_sgat <- function(){
+initialization_sgat <- function() {
   intento <- c("1")
-  class(intento) = "try-error"
-  while("try-error" %in% class(intento)){
+  class(intento) <- "try-error"
+  while ("try-error" %in% class(intento)) {
     intento <- try(sgat::driver_try(), silent = T)
   }
 }
