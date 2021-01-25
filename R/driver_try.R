@@ -1,6 +1,6 @@
-#' Automate driver creation and geckodriver selection
+#' Automated driver creation and geckodriver selection. Using \code{\link{initialization_sgat}} instead is recommended.
 #'
-#' @return "Tries for river connection"
+#' @return Tries for driver connection
 #' @export
 #'
 #' @examples

@@ -2,15 +2,15 @@
 % Please edit documentation in R/driver_try.R
 \name{driver_try}
 \alias{driver_try}
-\title{Automate driver creation and geckodriver selection}
+\title{Automated driver creation and geckodriver selection. Using \code{\link{initialization_sgat}} instead is recommended.}
 \usage{
 driver_try()
 }
 \value{
-"Tries for river connection"
+Tries for driver connection
 }
 \description{
-Automate driver creation and geckodriver selection
+Automated driver creation and geckodriver selection. Using \code{\link{initialization_sgat}} instead is recommended.
 }
 \examples{
 driver_try()

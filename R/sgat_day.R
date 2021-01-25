@@ -1,4 +1,4 @@
-#' Opens firefox, searches in Google lugar.a.buscar place on the dia.semana weekday. Then it retrieves the "Popular Times" and geolocation information. If the search finds said information, the function returns a data.frame, if not, NULL
+#' Opens firefox, searches in Google lugar.a.buscar place on the dia.semana weekday. Then it retrieves the "Popular Times" and geolocation information. If the search finds said information, the function returns a data.frame, if not, NULL. If you are looking the "Popular Times" information for the whole week use \code{\link{sgat}} instead.
 #'
 #' @param lugar.a.buscar What you want to search in Google
 #' @param dia.semana Day of the week from when you want to retrieve the "Popular Times" information
@@ -8,7 +8,8 @@
 #' @export
 #'
 #' @examples
-#' sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
+#' museo.miercoles <- sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
+#' head(museo.miercoles)
 sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
   remDr$open() # abre firefox
   remDr$navigate("https://www.google.com.ar") # va a google.com.ar

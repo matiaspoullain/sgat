@@ -1,14 +1,15 @@
-#' Iteration over sgat_day on every day of the week and finally save the retrieved data as a csv file
+#' Iteration over \code{\link{sgat_day}} on every day of the week and finally save the retrieved data as a csv file. If you are looking for the "Popular Times" information for a single weekday use \code{\link{sgat_day}} instead.
 #'
 #' @param lugar.a.buscar What you want to search in Google
 #' @param tiempo.espera Time measure of how much time you think it's sufficient given your internet connection to load a Google search page and not finding the information,
 #' @param carpeta.guardado Name of the directory where the csv files will be saved. If the directory doesn't exist, it will be created automatically.
 #'
-#' @return dataframe with retrieved information for all weekdays
+#' @return Data frame with retrieved information for all weekdays
 #' @export
 #'
 #' @examples
-#' sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
+#' museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
+#' head(museo)
 sgat <- function(lugar.a.buscar, tiempo.espera = 10, carpeta.guardado = "CSVs Concurrencias") {
   dias.semana <- c("martes", "miercoles", "jueves", "viernes", "sabado", "domingo")
   df <- sgat::sgat_day(lugar.a.buscar, "lunes", tiempo.espera)

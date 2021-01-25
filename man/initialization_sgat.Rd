@@ -2,7 +2,7 @@
 % Please edit documentation in R/initialization_sgat.R
 \name{initialization_sgat}
 \alias{initialization_sgat}
-\title{Iterate over driver_try until the driver is created}
+\title{Iterates over \code{\link{driver_try}} until the driver is created}
 \usage{
 initialization_sgat()
 }
@@ -10,7 +10,7 @@ initialization_sgat()
 "Driver connection"
 }
 \description{
-Iterate over driver_try until the driver is created
+Iterates over \code{\link{driver_try}} until the driver is created
 }
 \examples{
 initialization_sgat()

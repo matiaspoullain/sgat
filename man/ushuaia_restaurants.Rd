@@ -2,16 +2,17 @@
 % Please edit documentation in R/ushuaia_restaurants.R
 \name{ushuaia_restaurants}
 \alias{ushuaia_restaurants}
-\title{Retrieves a vector of Ushuaian's restaurants and bar's names and adresses}
+\title{Retrieves a vector of Ushuaian's restaurants and bar's names and adresses, ready for unambiguous Google searches.}
 \usage{
 ushuaia_restaurants()
 }
 \value{
-Vector of restaurants and bars in Ushuaia, Tierra del Fuego, Argentina
+Vector of restaurants and bars in Ushuaia city, Tierra del Fuego, Argentina
 }
 \description{
-Retrieves a vector of Ushuaian's restaurants and bar's names and adresses
+Retrieves a vector of Ushuaian's restaurants and bar's names and adresses, ready for unambiguous Google searches.
 }
 \examples{
-ushiaia_restaurants()
+restaurants <- ushuaia_restaurants()
+head(restaurants)
 }

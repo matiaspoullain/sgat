@@ -1,10 +1,11 @@
-#' Retrieves a vector of Ushuaian's restaurants and bar's names and adresses
+#' Retrieves a vector of Ushuaian's restaurants and bar's names and adresses, ready for unambiguous Google searches.
 #'
-#' @return Vector of restaurants and bars in Ushuaia, Tierra del Fuego, Argentina
+#' @return Vector of restaurants and bars in Ushuaia city, Tierra del Fuego, Argentina
 #' @export
 #'
 #' @examples
-#' ushiaia_restaurants()
+#' restaurants <- ushuaia_restaurants()
+#' head(restaurants)
 ushuaia_restaurants <- function() {
   address <- "https://www.interpatagonia.com/ushuaia/comidas.html"
   txt <- RCurl::getURL(address)

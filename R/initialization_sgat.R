@@ -1,4 +1,4 @@
-#' Iterate over driver_try until the driver is created
+#' Iterates over \code{\link{driver_try}} until the driver is created
 #'
 #' @return "Driver connection"
 #' @export

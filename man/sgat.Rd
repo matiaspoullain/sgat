@@ -2,7 +2,7 @@
 % Please edit documentation in R/sgat.R
 \name{sgat}
 \alias{sgat}
-\title{Iteration over sgat_day on every day of the week and finally save the retrieved data as a csv file}
+\title{Iteration over \code{\link{sgat_day}} on every day of the week and finally save the retrieved data as a csv file. If you are looking for the "Popular Times" information for a single weekday use \code{\link{sgat_day}} instead.}
 \usage{
 sgat(
   lugar.a.buscar,
@@ -18,11 +18,12 @@ sgat(
 \item{carpeta.guardado}{Name of the directory where the csv files will be saved. If the directory doesn't exist, it will be created automatically.}
 }
 \value{
-dataframe with retrieved information for all weekdays
+Data frame with retrieved information for all weekdays
 }
 \description{
-Iteration over sgat_day on every day of the week and finally save the retrieved data as a csv file
+Iteration over \code{\link{sgat_day}} on every day of the week and finally save the retrieved data as a csv file. If you are looking for the "Popular Times" information for a single weekday use \code{\link{sgat_day}} instead.
 }
 \examples{
-sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
+museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
+head(museo)
 }
