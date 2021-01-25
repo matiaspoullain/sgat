@@ -52,23 +52,23 @@ head(restaurants)
 
 You can retrieve the information from some of these restaurants. A csv file will be created in the "CSVs Concurrencias" directory by default. The file's name is the string you looked for.
 
-```{r bar 1.1, echo = TRUE, message=FALSE, warning=FALSE, results = 'hide'}
-bar_1 <- sgat(restaurants[2], carpeta.guardado = "CSVs Concurrencias")
+```{r bar 1.1, echo = TRUE, message=FALSE, warning=FALSE}
+bar_1 <- sgat("Kuar 1900 Bar, San Martín 471, Ushuaia", carpeta.guardado = "CSVs Concurrencias")
 ```
-```{r bar 1.2, message=FALSE, warning=FALSE}
+```{r bar 1.2, echo = TRUE, message=FALSE, warning=FALSE}
 head(bar_1)
 ```
 Although, some other Google searches doesn't have the wanted information. In that case, NULL is returned:
 
-```{r bar 2.1, echo = TRUE, message=FALSE, warning=FALSE, results = 'hide'}
-bar_2 <- sgat(restaurants[1])
+```{r bar 2.1, echo = TRUE, message=FALSE, warning=FALSE}
+bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia")
 ```
-```{r bar 2.2, message=FALSE, warning=FALSE}
+```{r bar 2.2, echo = TRUE, message=FALSE, warning=FALSE}
 bar_2
 ```
 The searches are not restricted to Ushuaia, but remember to be specific in your searches, specially if the location you are lookinn for is far away:
 
-```{r bar 3.1, echo=TRUE, message=FALSE, warning=FALSE, results = 'hide'}
+```{r bar 3.1, echo = TRUE, message=FALSE, warning=FALSE}
 bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 ```
 ```{r bar 3.2, message=FALSE, warning=FALSE}
