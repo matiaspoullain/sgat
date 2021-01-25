@@ -21,15 +21,16 @@ sgat <- function(lugar.a.buscar, tiempo.espera = 10, carpeta.guardado = "CSVs Co
   }else{
     i <- TRUE
   }
-  for(dia.semana in dias.semana){
-    if(i){
+  if(i){
+    for(dia.semana in dias.semana){
       datos <- sgat::sgat_day(lugar.a.buscar, dia.semana, tiempo.espera)
       df <- rbind(df, datos)
     }
-  }
-  if(i){
     dir.create(carpeta.guardado, showWarnings = FALSE) #crea la carpeta concurrencia si no existe aun
     utils::write.csv(df, file = paste(carpeta.guardado, "/Concurrencia ", lugar.a.buscar, " ", as.character(Sys.Date()),".csv", sep = ""))
+    df
+
+  }else{
+    NULL
   }
-  df
 }
