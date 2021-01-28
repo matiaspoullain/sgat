@@ -20,6 +20,7 @@ dataframe with retrieved information for single weekday
 Opens firefox, searches in Google lugar.a.buscar place on the dia.semana weekday. Then it retrieves the "Popular Times" and geolocation information. If the search finds said information, the function returns a data.frame, if not, NULL. If you are looking the "Popular Times" information for the whole week use \code{\link{sgat}} instead.
 }
 \examples{
-museo.miercoles <- sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
-head(museo.miercoles)
+\dontrun{museo.miercoles <- sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
+head(museo.miercoles)}
+
 }

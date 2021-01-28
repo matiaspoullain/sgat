@@ -13,5 +13,5 @@ initialization_sgat()
 Iterates over \code{\link{driver_try}} until the driver is created
 }
 \examples{
-initialization_sgat()
+\dontrun{initialization_sgat()}
 }

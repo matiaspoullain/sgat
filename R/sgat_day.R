@@ -8,8 +8,9 @@
 #' @export
 #'
 #' @examples
-#' museo.miercoles <- sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
-#' head(museo.miercoles)
+#' \dontrun{museo.miercoles <- sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
+#' head(museo.miercoles)}
+#'
 sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
   remDr$open() # abre firefox
   remDr$navigate("https://www.google.com.ar") # va a google.com.ar

@@ -13,5 +13,6 @@ Tries for driver connection
 Automated driver creation and geckodriver selection. Using \code{\link{initialization_sgat}} instead is recommended.
 }
 \examples{
-driver_try()
+\dontrun{driver_try()}
+
 }

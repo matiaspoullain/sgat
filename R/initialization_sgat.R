@@ -4,7 +4,7 @@
 #' @export
 #'
 #' @examples
-#' initialization_sgat()
+#' \dontrun{initialization_sgat()}
 initialization_sgat <- function() {
   intento <- c("1")
   class(intento) <- "try-error"

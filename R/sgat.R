@@ -8,8 +8,8 @@
 #' @export
 #'
 #' @examples
-#' museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
-#' head(museo)
+#' \dontrun{museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
+#' head(museo)}
 sgat <- function(lugar.a.buscar, tiempo.espera = 10, carpeta.guardado = "CSVs Concurrencias") {
   dias.semana <- c("martes", "miercoles", "jueves", "viernes", "sabado", "domingo")
   df <- sgat::sgat_day(lugar.a.buscar, "lunes", tiempo.espera)

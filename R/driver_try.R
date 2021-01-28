@@ -4,7 +4,8 @@
 #' @export
 #'
 #' @examples
-#' driver_try()
+#' \dontrun{driver_try()}
+#'
 driver_try <- function() {
   driver <- try(RSelenium::rsDriver(browser = "firefox", geckover = "latest"), silent = T)
   if ("try-error" %in% class(driver)) {
