@@ -12,7 +12,7 @@
 #' head(museo.miercoles)}
 #'
 sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
-  remDr$open() # abre firefox
+  remDr$open(silent = TRUE) # abre firefox
   remDr$navigate("https://www.google.com.ar") # va a google.com.ar
   webElem <- remDr$findElement(using = "name", value = "q") # selecciona el recuadro de busqueda
   webElem$sendKeysToElement(list(paste(lugar.a.buscar, "horarios", dia.semana), "\uE007")) # escribe el lugar.a.buscar y hace la busqueda
@@ -43,8 +43,8 @@ sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
       if (length(concurrencia) != length(hora)) {
         loc.concurrencia <- data.table::data.table(concurrencia, data.frame(stringr::str_locate_all(source, 'class="cwiwob'))) # ubicaciones de los characteres encontrados
         loc.hora <- data.table::data.table(hora, data.frame(stringr::str_locate_all(source, "data-hour=")))
-        data.table::setkey(loc.concurrencia, start) # para hacer el join
-        data.table::setkey(loc.hora, start)
+        data.table::setkey(loc.concurrencia, "start") # para hacer el join
+        data.table::setkey(loc.hora, "start")
         df <- as.data.frame(loc.concurrencia[loc.hora, roll = "nearest"]) # join menos estricto, joinea segun cercania de caracteres
         df <- df[, c(4, 1)]
       } else {
