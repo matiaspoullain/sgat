@@ -34,7 +34,6 @@ Always start by initializing the driver, once per session:
 library(sgat)
 initialization_sgat()
 #> [1] "Connecting to remote server"
-#> [1] "Connecting to remote server"
 #> $acceptInsecureCerts
 #> [1] FALSE
 #> 
@@ -57,10 +56,10 @@ initialization_sgat()
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 27120
+#> [1] 35384
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileY6lAZW"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofile3305aw"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -104,10 +103,10 @@ initialization_sgat()
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "0ed0d3a2-bb54-4aa2-bf6b-c6d83607670a"
+#> [1] "9d7b100e-866e-4a32-a58f-615c1fdfda04"
 #> 
 #> $id
-#> [1] "0ed0d3a2-bb54-4aa2-bf6b-c6d83607670a"
+#> [1] "9d7b100e-866e-4a32-a58f-615c1fdfda04"
 ```
 
 This package was created to use it on restaurants, bars, etc… located in
@@ -117,12 +116,12 @@ them by using the next code:
 ``` r
 restaurants <- ushuaia_restaurants()
 head(restaurants)
-#> [1] "Moustacchio, San Martín 298, Ushuaia"              
-#> [2] "Prana, Av Maipu 505, Ushuaia"                      
-#> [3] "La Cabaña Casa de Té, Luis F Martial 3560, Ushuaia"
-#> [4] "Kuar, Av Perito Moreno 2232, Ushuaia"              
-#> [5] "La Cabaña, Luis Fernando Martial 3550, Ushuaia"    
-#> [6] "Kuar 1900, San Martín 471, Ushuaia"
+#> [1] "Prana, Av Maipu 505, Ushuaia"              
+#> [2] "Moustacchio, San Martín 298, Ushuaia"      
+#> [3] "Kuar, Av Perito Moreno 2232, Ushuaia"      
+#> [4] "Kuar 1900, San Martín 471, Ushuaia"        
+#> [5] "Hostal del Bosque, Magallanes 709, Ushuaia"
+#> [6] "Sur 54 Lodge, A 70 Km de Ushuaia, Ushuaia"
 ```
 
 You can retrieve the information from some of these restaurants. A csv
@@ -131,9 +130,6 @@ The file’s name is the string you looked for.
 
 ``` r
 bar_1 <- sgat("Kuar 1900 Bar, San Martín 471, Ushuaia", carpeta.guardado = "CSVs Concurrencias")
-```
-
-``` r
 head(bar_1)
 #>                                    lugar   dia hora concurrencia   latitud
 #> 1 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    6            0 -54.80635
@@ -143,12 +139,12 @@ head(bar_1)
 #> 5 Kuar 1900 Bar, San Martín 471, Ushuaia lunes   10            0 -54.80635
 #> 6 Kuar 1900 Bar, San Martín 471, Ushuaia lunes   11            0 -54.80635
 #>    longitud fecha.de.busqueda
-#> 1 -68.30474        2021-01-26
-#> 2 -68.30474        2021-01-26
-#> 3 -68.30474        2021-01-26
-#> 4 -68.30474        2021-01-26
-#> 5 -68.30474        2021-01-26
-#> 6 -68.30474        2021-01-26
+#> 1 -68.30474        2021-02-01
+#> 2 -68.30474        2021-02-01
+#> 3 -68.30474        2021-02-01
+#> 4 -68.30474        2021-02-01
+#> 5 -68.30474        2021-02-01
+#> 6 -68.30474        2021-02-01
 ```
 
 Although, some other Google searches doesn’t have the wanted
@@ -156,35 +152,42 @@ information. In that case, NULL is returned:
 
 ``` r
 bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia")
-```
-
-``` r
 bar_2
 #> NULL
 ```
 
 The searches are not restricted to Ushuaia, but remember to be specific
-in your searches, specially if the location you are lookinn for is far
+in your searches, specially if the location you are looking for is far
 away:
 
 ``` r
 bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
-```
-
-``` r
 head(bar_3)
 #>                                              lugar   dia hora concurrencia
 #> 1 coutume, 47 rue de babylone, 75007 paris, france lunes    6         0.00
 #> 2 coutume, 47 rue de babylone, 75007 paris, france lunes    7         0.00
-#> 3 coutume, 47 rue de babylone, 75007 paris, france lunes    8        13.50
-#> 4 coutume, 47 rue de babylone, 75007 paris, france lunes    9        29.25
-#> 5 coutume, 47 rue de babylone, 75007 paris, france lunes   10        34.50
-#> 6 coutume, 47 rue de babylone, 75007 paris, france lunes   11        32.25
+#> 3 coutume, 47 rue de babylone, 75007 paris, france lunes    8        12.75
+#> 4 coutume, 47 rue de babylone, 75007 paris, france lunes    9        22.50
+#> 5 coutume, 47 rue de babylone, 75007 paris, france lunes   10        21.00
+#> 6 coutume, 47 rue de babylone, 75007 paris, france lunes   11        15.00
 #>    latitud longitud fecha.de.busqueda
-#> 1 48.85166 2.318299        2021-01-26
-#> 2 48.85166 2.318299        2021-01-26
-#> 3 48.85166 2.318299        2021-01-26
-#> 4 48.85166 2.318299        2021-01-26
-#> 5 48.85166 2.318299        2021-01-26
-#> 6 48.85166 2.318299        2021-01-26
+#> 1 48.85166 2.318299        2021-02-01
+#> 2 48.85166 2.318299        2021-02-01
+#> 3 48.85166 2.318299        2021-02-01
+#> 4 48.85166 2.318299        2021-02-01
+#> 5 48.85166 2.318299        2021-02-01
+#> 6 48.85166 2.318299        2021-02-01
+```
+
+A new function was added which let’s the user to search for the most
+popular places of a city or area according to Tripadvisor:
+
+``` r
+pinamar <- tripadvisor_places("Pinamar, Argentina", 10)
+pinamar
+#>  [1] NA                        "Waffles con Sentidos"   
+#>  [3] "SushiClub Pinamar"       "El Piave"               
+#>  [5] "Bonafide"                "Nelson Resto Bar"       
+#>  [7] "Parador Puerto"          "La Vieja Hostería Restó"
+#>  [9] "Cauca"                   "Triton"
 ```
