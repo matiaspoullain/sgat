@@ -1,14 +1,17 @@
-#' Iterates over \code{\link{driver_try}} until the driver is created
+#' Automated server creation
 #'
 #' @return "Driver connection"
 #' @export
 #'
 #' @examples
 #' \dontrun{initialization_sgat()}
-initialization_sgat <- function() {
-  intento <- c("1")
-  class(intento) <- "try-error"
-  while ("try-error" %in% class(intento)) {
-    intento <- try(sgat::driver_try(), silent = T)
-  }
+initialization_sgat <- function(...) {
+  driver <- RSelenium::rsDriver(browser = "firefox", geckover = "latest")
+  driver$client$close()
+  remDr <<- driver[["client"]]
+  remDr <<- RSelenium::remoteDriver(
+    remoteServerAddr = "localhost",
+    port = 4567,
+    browserName = "firefox"
+  )
 }

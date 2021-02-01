@@ -2,15 +2,15 @@
 % Please edit documentation in R/initialization_sgat.R
 \name{initialization_sgat}
 \alias{initialization_sgat}
-\title{Iterates over \code{\link{driver_try}} until the driver is created}
+\title{Automated server creation}
 \usage{
-initialization_sgat()
+initialization_sgat(...)
 }
 \value{
 "Driver connection"
 }
 \description{
-Iterates over \code{\link{driver_try}} until the driver is created
+Automated server creation
 }
 \examples{
 \dontrun{initialization_sgat()}

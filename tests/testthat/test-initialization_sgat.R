@@ -1,5 +1,6 @@
+initialization_sgat()
+
 test_that("Driver initializes", {
-  initialization_sgat()
   expect_match(class(remDr), "remoteDriver")
 })
 
