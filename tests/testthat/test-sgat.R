@@ -1,4 +1,5 @@
-initialization_sgat()
+try(initialization_sgat(geckover = "0.28.0"), silent = TRUE)
+
 
 test_that("gives correct data frame if information is found", {
   coutume <- sgat("coutume, 47 rue de babylone, 75007 paris, france")

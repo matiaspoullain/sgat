@@ -5,8 +5,8 @@
 #'
 #' @examples
 #' \dontrun{initialization_sgat()}
-initialization_sgat <- function(...) {
-  driver <- RSelenium::rsDriver(browser = "firefox", geckover = "latest")
+initialization_sgat <- function(geckover = "latest", ...) {
+  driver <- RSelenium::rsDriver(browser = "firefox", geckover = geckover)
   driver$client$close()
   remDr <<- driver[["client"]]
   remDr <<- RSelenium::remoteDriver(

@@ -9,6 +9,9 @@
 #' @examples
 #'  \dontrun{tripadvisor_places("Pinamar, Argentina", 10)}
 tripadvisor_places <- function(ciudad, n.resultados = Inf){
+  if(missing(ciudad)){
+    stop('"ciudad" must be specified')
+  }
   remDr$open(silent = TRUE) # abre firefox
   remDr$navigate("https://www.google.com.ar")
   webElem <- remDr$findElement(using = "name", value = "q")

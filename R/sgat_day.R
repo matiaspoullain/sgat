@@ -12,6 +12,9 @@
 #' head(museo.miercoles)}
 #'
 sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
+  if(missing(lugar.a.buscar) | missing(dia.semana)){
+    stop('"lugar.a.buscar" and "dia.semana" must be specified')
+  }
   remDr$open(silent = TRUE) # abre firefox
   remDr$navigate("https://www.google.com.ar") # va a google.com.ar
   webElem <- remDr$findElement(using = "name", value = "q") # selecciona el recuadro de busqueda

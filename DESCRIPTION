@@ -14,10 +14,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    testthat (>= 2.0.0),
+    testthat (>= 3.0.0),
     knitr,
     rmarkdown
-Config/testthat/edition: 2
+Config/testthat/edition: 3
 Imports: 
     RSelenium,
     RCurl,
@@ -26,7 +26,6 @@ Imports:
     stringr,
     data.table,
     plyr,
-    binman,
     utils
 URL: https://github.com/matiaspoullain/sgat
 BugReports: https://github.com/matiaspoullain/sgat/issues
