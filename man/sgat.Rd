@@ -4,11 +4,7 @@
 \alias{sgat}
 \title{Iteration over \code{\link{sgat_day}} on every day of the week and finally save the retrieved data as a csv file. If you are looking for the "Popular Times" information for a single weekday use \code{\link{sgat_day}} instead.}
 \usage{
-sgat(
-  lugar.a.buscar,
-  tiempo.espera = 10,
-  carpeta.guardado = "CSVs Concurrencias"
-)
+sgat(lugar.a.buscar, tiempo.espera = 10, carpeta.guardado = NULL)
 }
 \arguments{
 \item{lugar.a.buscar}{What you want to search in Google}

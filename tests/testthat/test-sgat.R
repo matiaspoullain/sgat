@@ -1,14 +1,14 @@
-try(initialization_sgat(geckover = "0.28.0"), silent = TRUE)
+try(initialization_sgat(), silent = TRUE)
 
 
 test_that("gives correct data frame if information is found", {
   coutume <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
-  expect_is(coutume, "data.frame")
+  expect_s3_class(coutume, "data.frame")
   expect_identical(unique(coutume$lugar), "coutume, 47 rue de babylone, 75007 paris, france")
   expect_lt(max(coutume$hora), 24)
   expect_gt(min(coutume$hora), 0)
-  expect_is(coutume$latitud, "numeric")
-  expect_is(coutume$longitud, "numeric")
+  expect_type(coutume$latitud, "double")
+  expect_type(coutume$longitud, "double")
 })
 
 test_that("gives NULL if information is not found", {

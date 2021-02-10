@@ -4,7 +4,7 @@
 \alias{initialization_sgat}
 \title{Automated server creation}
 \usage{
-initialization_sgat(geckover = "latest", ...)
+initialization_sgat()
 }
 \value{
 "Driver connection"

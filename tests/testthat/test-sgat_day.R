@@ -1,15 +1,15 @@
-try(initialization_sgat(geckover = "0.28.0"), silent = TRUE)
+try(initialization_sgat(), silent = TRUE)
 
 
 test_that("gives correct data frame if information is found", {
   coutume.martes <- sgat_day("coutume, 47 rue de babylone, 75007 paris, france", "martes")
-  expect_is(coutume.martes, "data.frame")
+  expect_s3_class(coutume.martes, "data.frame")
   expect_identical(unique(coutume.martes$lugar), "coutume, 47 rue de babylone, 75007 paris, france")
   expect_identical(unique(coutume.martes$dia), "martes")
   expect_lt(max(coutume.martes$hora), 24)
   expect_gt(min(coutume.martes$hora), 0)
-  expect_is(coutume.martes$latitud, "numeric")
-  expect_is(coutume.martes$longitud, "numeric")
+  expect_type(coutume.martes$latitud, "double")
+  expect_type(coutume.martes$longitud, "double")
 })
 
 test_that("gives message if information is not found", {

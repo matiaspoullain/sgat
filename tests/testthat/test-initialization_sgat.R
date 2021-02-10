@@ -1,4 +1,4 @@
-try(initialization_sgat(geckover = "0.28.0"), silent = TRUE)
+try(initialization_sgat(), silent = TRUE)
 
 test_that("Driver initializes", {
   expect_match(class(remDr), "remoteDriver")
