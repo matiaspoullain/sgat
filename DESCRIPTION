@@ -1,5 +1,5 @@
 Package: sgat
-Title: A friendly and forward way for extracting information from Google's "Popular times", returning it as dataframes and saving it as .csv files.
+Title: A Friendly and Forward Way for Extracting Information from Google's "Popular Times", Returning it as Dataframes and Saving it as .csv Files
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Matias",
