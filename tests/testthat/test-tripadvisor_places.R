@@ -8,7 +8,7 @@ test_that("gives correct character vector if information is found", {
 })
 
 test_that("gives NA if information is not found", {
-  bad_example <- tripadvisor_places("fjkla")
+  bad_example <- tripadvisor_places("bad examples")
   expect_type(bad_example, "character")
   expect_length(bad_example, 1)
 })

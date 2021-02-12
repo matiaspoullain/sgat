@@ -2,7 +2,7 @@ try(initialization_sgat(), silent = TRUE)
 
 
 test_that("gives correct data frame if information is found", {
-  coutume <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
+  coutume <- sgat("coutume, 47 rue de babylone, 75007 paris, france", tiempo.espera = 20)
   expect_s3_class(coutume, "data.frame")
   expect_identical(unique(coutume$lugar), "coutume, 47 rue de babylone, 75007 paris, france")
   expect_lt(max(coutume$hora), 24)
