@@ -50,22 +50,23 @@ restaurants <- ushuaia_restaurants()
 head(restaurants)
 ```
 
-You can retrieve the information from some of these restaurants. A csv file will be created in the "CSVs Concurrencias" directory by default. The file's name is the string you looked for.
+You can retrieve the information from some of these restaurants. The searches are not restricted to Ushuaia, but remember to be specific in your searches, specially if the location you are looking for is far away:
 
-```{r bar 1.2, echo = TRUE, message=FALSE, warning=FALSE}
-bar_1 <- sgat("Kuar 1900 Bar, San Martín 471, Ushuaia", carpeta.guardado = "CSVs Concurrencias")
+```{r bar 1.1, message=FALSE, warning=FALSE}
+bar_1 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
 head(bar_1)
 ```
 Although, some other Google searches doesn't have the wanted information. In that case, NULL is returned:
 
 ```{r bar 2.2, echo = TRUE, message=FALSE, warning=FALSE}
-bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia")
+bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia", tiempo.espera = 20)
 bar_2
 ```
-The searches are not restricted to Ushuaia, but remember to be specific in your searches, specially if the location you are looking for is far away:
+
+You also can search for the information from a single day of the week:
 
 ```{r bar 3.2, message=FALSE, warning=FALSE}
-bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
+bar_3 <- sgat_day("coutume, 47 rue de babylone, 75007 paris, france", "martes")
 head(bar_3)
 ```
 
@@ -75,4 +76,3 @@ A new function was added which let's the user to search for the most popular pla
 pinamar <- tripadvisor_places("Pinamar, Argentina", 10)
 pinamar
 ```
-

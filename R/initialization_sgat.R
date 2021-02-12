@@ -8,10 +8,14 @@
 initialization_sgat <- function() {
   driver <- RSelenium::rsDriver(browser = "firefox", geckover = "0.28.0")
   driver$client$close()
-  assign("remDr", driver[["client"]], globalenv())
-  assign("remDr", RSelenium::remoteDriver(
+  assign_to_global <- function(func, pos=1){
+    assign("remDr", func, envir=as.environment(pos) )
+  }
+  assign_to_global(func = {driver[["client"]]})
+  assign_to_global(func = {RSelenium::remoteDriver(
     remoteServerAddr = "localhost",
     port = 4567,
     browserName = "firefox"
-  ), globalenv())
+  )})
+
 }

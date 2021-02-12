@@ -41,13 +41,13 @@ initialization_sgat()
 #> [1] "firefox"
 #> 
 #> $browserVersion
-#> [1] "84.0.2"
+#> [1] "85.0.2"
 #> 
 #> $`moz:accessibilityChecks`
 #> [1] FALSE
 #> 
 #> $`moz:buildID`
-#> [1] "20210105180113"
+#> [1] "20210208133944"
 #> 
 #> $`moz:geckodriverVersion`
 #> [1] "0.28.0"
@@ -56,10 +56,10 @@ initialization_sgat()
 #> [1] FALSE
 #> 
 #> $`moz:processID`
-#> [1] 35384
+#> [1] 57600
 #> 
 #> $`moz:profile`
-#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofile3305aw"
+#> [1] "C:\\Users\\Matias\\AppData\\Local\\Temp\\rust_mozprofileLtDB4f"
 #> 
 #> $`moz:shutdownTimeout`
 #> [1] 60000
@@ -103,10 +103,10 @@ initialization_sgat()
 #> [1] "dismiss and notify"
 #> 
 #> $webdriver.remote.sessionid
-#> [1] "9d7b100e-866e-4a32-a58f-615c1fdfda04"
+#> [1] "2c38b83d-cbc5-4f53-b942-cd79560428dd"
 #> 
 #> $id
-#> [1] "9d7b100e-866e-4a32-a58f-615c1fdfda04"
+#> [1] "2c38b83d-cbc5-4f53-b942-cd79560428dd"
 ```
 
 This package was created to use it on restaurants, bars, etc… located in
@@ -116,53 +116,22 @@ them by using the next code:
 ``` r
 restaurants <- ushuaia_restaurants()
 head(restaurants)
-#> [1] "Prana, Av Maipu 505, Ushuaia"              
-#> [2] "Moustacchio, San Martín 298, Ushuaia"      
+#> [1] "Moustacchio, San Martín 298, Ushuaia"      
+#> [2] "Prana, Av Maipu 505, Ushuaia"              
 #> [3] "Kuar, Av Perito Moreno 2232, Ushuaia"      
 #> [4] "Kuar 1900, San Martín 471, Ushuaia"        
 #> [5] "Hostal del Bosque, Magallanes 709, Ushuaia"
 #> [6] "Sur 54 Lodge, A 70 Km de Ushuaia, Ushuaia"
 ```
 
-You can retrieve the information from some of these restaurants. A csv
-file will be created in the “CSVs Concurrencias” directory by default.
-The file’s name is the string you looked for.
-
-``` r
-bar_1 <- sgat("Kuar 1900 Bar, San Martín 471, Ushuaia", carpeta.guardado = "CSVs Concurrencias")
-head(bar_1)
-#>                                    lugar   dia hora concurrencia   latitud
-#> 1 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    6            0 -54.80635
-#> 2 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    7            0 -54.80635
-#> 3 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    8            0 -54.80635
-#> 4 Kuar 1900 Bar, San Martín 471, Ushuaia lunes    9            0 -54.80635
-#> 5 Kuar 1900 Bar, San Martín 471, Ushuaia lunes   10            0 -54.80635
-#> 6 Kuar 1900 Bar, San Martín 471, Ushuaia lunes   11            0 -54.80635
-#>    longitud fecha.de.busqueda
-#> 1 -68.30474        2021-02-01
-#> 2 -68.30474        2021-02-01
-#> 3 -68.30474        2021-02-01
-#> 4 -68.30474        2021-02-01
-#> 5 -68.30474        2021-02-01
-#> 6 -68.30474        2021-02-01
-```
-
-Although, some other Google searches doesn’t have the wanted
-information. In that case, NULL is returned:
-
-``` r
-bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia")
-bar_2
-#> NULL
-```
-
-The searches are not restricted to Ushuaia, but remember to be specific
-in your searches, specially if the location you are looking for is far
+You can retrieve the information from some of these restaurants. The
+searches are not restricted to Ushuaia, but remember to be specific in
+your searches, specially if the location you are looking for is far
 away:
 
 ``` r
-bar_3 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
-head(bar_3)
+bar_1 <- sgat("coutume, 47 rue de babylone, 75007 paris, france")
+head(bar_1)
 #>                                              lugar   dia hora concurrencia
 #> 1 coutume, 47 rue de babylone, 75007 paris, france lunes    6         0.00
 #> 2 coutume, 47 rue de babylone, 75007 paris, france lunes    7         0.00
@@ -171,12 +140,42 @@ head(bar_3)
 #> 5 coutume, 47 rue de babylone, 75007 paris, france lunes   10        21.00
 #> 6 coutume, 47 rue de babylone, 75007 paris, france lunes   11        15.00
 #>    latitud longitud fecha.de.busqueda
-#> 1 48.85166 2.318299        2021-02-01
-#> 2 48.85166 2.318299        2021-02-01
-#> 3 48.85166 2.318299        2021-02-01
-#> 4 48.85166 2.318299        2021-02-01
-#> 5 48.85166 2.318299        2021-02-01
-#> 6 48.85166 2.318299        2021-02-01
+#> 1 48.85166 2.318299        2021-02-12
+#> 2 48.85166 2.318299        2021-02-12
+#> 3 48.85166 2.318299        2021-02-12
+#> 4 48.85166 2.318299        2021-02-12
+#> 5 48.85166 2.318299        2021-02-12
+#> 6 48.85166 2.318299        2021-02-12
+```
+
+Although, some other Google searches doesn’t have the wanted
+information. In that case, NULL is returned:
+
+``` r
+bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia", tiempo.espera = 20)
+bar_2
+#> NULL
+```
+
+You also can search for the information from a single day of the week:
+
+``` r
+bar_3 <- sgat_day("coutume, 47 rue de babylone, 75007 paris, france", "martes")
+head(bar_3)
+#>                                              lugar    dia hora concurrencia
+#> 1 coutume, 47 rue de babylone, 75007 paris, france martes    6         0.00
+#> 2 coutume, 47 rue de babylone, 75007 paris, france martes    7         0.00
+#> 3 coutume, 47 rue de babylone, 75007 paris, france martes    8         8.25
+#> 4 coutume, 47 rue de babylone, 75007 paris, france martes    9        13.50
+#> 5 coutume, 47 rue de babylone, 75007 paris, france martes   10        19.50
+#> 6 coutume, 47 rue de babylone, 75007 paris, france martes   11        24.75
+#>    latitud longitud fecha.de.busqueda
+#> 1 48.85166 2.318299        2021-02-12
+#> 2 48.85166 2.318299        2021-02-12
+#> 3 48.85166 2.318299        2021-02-12
+#> 4 48.85166 2.318299        2021-02-12
+#> 5 48.85166 2.318299        2021-02-12
+#> 6 48.85166 2.318299        2021-02-12
 ```
 
 A new function was added which let’s the user to search for the most
@@ -185,9 +184,8 @@ popular places of a city or area according to Tripadvisor:
 ``` r
 pinamar <- tripadvisor_places("Pinamar, Argentina", 10)
 pinamar
-#>  [1] NA                        "Waffles con Sentidos"   
-#>  [3] "SushiClub Pinamar"       "El Piave"               
-#>  [5] "Bonafide"                "Nelson Resto Bar"       
-#>  [7] "Parador Puerto"          "La Vieja Hostería Restó"
-#>  [9] "Cauca"                   "Triton"
+#>  [1] "La Jirafa"              "Palote Pizza"           "Los troncos"           
+#>  [4] "La Armonía"             "Paxapoga del Mar"       "Rada Beach Demuru"     
+#>  [7] "Il Garda"               "Parador Barlovento"     "Pescaderia Di Costanzo"
+#> [10] "Tante"
 ```
