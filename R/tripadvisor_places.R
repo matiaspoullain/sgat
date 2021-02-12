@@ -7,9 +7,12 @@
 #' @export
 #'
 #' @examples
-#'  \dontrun{tripadvisor_places("Pinamar, Argentina", 10)}
-tripadvisor_places <- function(ciudad, n.resultados = Inf){
-  if(missing(ciudad)){
+#'
+#' \dontrun{
+#' tripadvisor_places("Pinamar, Argentina", 10)
+#' }
+tripadvisor_places <- function(ciudad, n.resultados = Inf) {
+  if (missing(ciudad)) {
     stop('"ciudad" must be specified')
   }
   remDr$open(silent = TRUE) # abre firefox
@@ -24,21 +27,20 @@ tripadvisor_places <- function(ciudad, n.resultados = Inf){
   restaurantes <- c()
   rest.num <- 30
   x <- 1
-  while((remDr$getCurrentUrl()[[1]] != tripadvisor | x == 1) & length(restaurantes) < n.resultados){
+  while ((remDr$getCurrentUrl()[[1]] != tripadvisor | x == 1) & length(restaurantes) < n.resultados) {
     source <- c(1, 2)
-    while(length(source) == 2){
+    while (length(source) == 2) {
       source <- remDr$getPageSource()[[1]]
     }
-    restaurantes <- c(restaurantes, qdapRegex::ex_between(source, '<!-- -->. <!-- -->', "</a>")[[1]])
-    remDr$navigate(paste(substr(tripadvisor, 1, n-1), "-oa", rest.num, substr(tripadvisor, n, nchar(tripadvisor)), sep = ""))
+    restaurantes <- c(restaurantes, qdapRegex::ex_between(source, "<!-- -->. <!-- -->", "</a>")[[1]])
+    remDr$navigate(paste(substr(tripadvisor, 1, n - 1), "-oa", rest.num, substr(tripadvisor, n, nchar(tripadvisor)), sep = ""))
     x <- x + 1
     rest.num <- rest.num + 30
   }
   remDr$close()
-  if(n.resultados < Inf){
+  if (n.resultados < Inf) {
     restaurantes[1:n.resultados]
-  }else{
+  } else {
     restaurantes
   }
-
 }

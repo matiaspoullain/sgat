@@ -8,8 +8,10 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
-#' head(museo)}
+#' \dontrun{
+#' museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
+#' head(museo)
+#' }
 sgat <- function(lugar.a.buscar, tiempo.espera = 10, carpeta.guardado = NULL) {
   dias.semana <- c("martes", "miercoles", "jueves", "viernes", "sabado", "domingo")
   df <- sgat::sgat_day(lugar.a.buscar, "lunes", tiempo.espera)
@@ -27,7 +29,7 @@ sgat <- function(lugar.a.buscar, tiempo.espera = 10, carpeta.guardado = NULL) {
       datos <- sgat::sgat_day(lugar.a.buscar, dia.semana, tiempo.espera)
       df <- rbind(df, datos)
     }
-    if (is.character(carpeta.guardado)){
+    if (is.character(carpeta.guardado)) {
       dir.create(carpeta.guardado, showWarnings = FALSE) # crea la carpeta concurrencia si no existe aun
       utils::write.csv(df, file = paste(carpeta.guardado, "/Concurrencia ", lugar.a.buscar, " ", as.character(Sys.Date()), ".csv", sep = ""))
     }

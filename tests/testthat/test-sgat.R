@@ -21,4 +21,3 @@ test_that("gives NULL if information is not found", {
 test_that("error if no lugar.a.buscar and or dia.seman typed", {
   expect_error(sgat())
 })
-

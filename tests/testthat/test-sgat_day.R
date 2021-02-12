@@ -15,7 +15,7 @@ test_that("gives correct data frame if information is found", {
 })
 
 test_that("gives message if information is not found", {
-    expect_identical(sgat_day("Moustacchio, San Martín 298, Ushuaia, Argentina", "jueves"), "Sin datos de concurrencia")
+  expect_identical(sgat_day("Moustacchio, San Martín 298, Ushuaia, Argentina", "jueves"), "Sin datos de concurrencia")
 })
 
 test_that("error if lugar.a.buscar and or dia.semana is not typed", {

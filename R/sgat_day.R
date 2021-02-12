@@ -8,11 +8,13 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{museo.miercoles <- sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
-#' head(museo.miercoles)}
+#' \dontrun{
+#' museo.miercoles <- sgat_day("museo nacional de bellas artes, buenos aires, argentina", "miercoles")
+#' head(museo.miercoles)
+#' }
 #'
 sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
-  if(missing(lugar.a.buscar) | missing(dia.semana)){
+  if (missing(lugar.a.buscar) | missing(dia.semana)) {
     stop('"lugar.a.buscar" and "dia.semana" must be specified')
   }
   remDr$open(silent = TRUE) # abre firefox
