@@ -18,5 +18,8 @@ Character vector with the names of the most popular places of the searched city 
 Search for the n most popular places in a city according to Tripadvisor
 }
 \examples{
- \dontrun{tripadvisor_places("Pinamar, Argentina", 10)}
+
+\dontrun{
+tripadvisor_places("Pinamar, Argentina", 10)
+}
 }

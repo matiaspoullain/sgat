@@ -20,6 +20,8 @@ Data frame with retrieved information for all weekdays
 Iteration over \code{\link{sgat_day}} on every day of the week and finally save the retrieved data as a csv file. If you are looking for the "Popular Times" information for a single weekday use \code{\link{sgat_day}} instead.
 }
 \examples{
-\dontrun{museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
-head(museo)}
+\dontrun{
+museo <- sgat(lugar.a.buscar = "museo nacional de bellas artes, buenos aires, argentina")
+head(museo)
+}
 }

@@ -13,5 +13,7 @@ initialization_sgat()
 Automated server creation
 }
 \examples{
-\dontrun{initialization_sgat()}
+\dontrun{
+initialization_sgat()
+}
 }

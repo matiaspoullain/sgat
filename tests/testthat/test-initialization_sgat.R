@@ -1,6 +1,9 @@
+skip_on_cran()
+skip_if_offline(host = "r-project.org")
+
 try(initialization_sgat(), silent = TRUE)
 
-test_that("Driver initializes", {
+test_that("Server initializes", {
   expect_match(class(remDr), "remoteDriver")
 })
 
