@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 testthat::skip_on_cran()
 testthat::skip_if_offline(host = "r-project.org")
 
 try(initialization_sgat(), silent = TRUE)
-=======
->>>>>>> 00b69a5183faa03cf1bdbaef9a8deeac974f1f5f
 
 test_that("gives correct data frame if information is found", {
   skip("prueba")
