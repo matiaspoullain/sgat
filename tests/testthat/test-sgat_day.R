@@ -1,7 +1,7 @@
-try(initialization_sgat(), silent = TRUE)
+testthat::skip_on_cran()
+testthat::skip_if_offline(host = "r-project.org")
 
-skip_on_cran()
-skip_if_offline(host = "r-project.org")
+try(initialization_sgat(), silent = TRUE)
 
 test_that("gives correct data frame if information is found", {
   coutume.martes <- sgat_day("coutume, 47 rue de babylone, 75007 paris, france", "martes", tiempo.espera = 20)

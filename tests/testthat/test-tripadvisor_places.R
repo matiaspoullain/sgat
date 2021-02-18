@@ -1,7 +1,7 @@
-try(initialization_sgat(), silent = TRUE)
+testthat::skip_on_cran()
+testthat::skip_if_offline(host = "r-project.org")
 
-skip_on_cran()
-skip_if_offline(host = "r-project.org")
+try(initialization_sgat(), silent = TRUE)
 
 test_that("gives correct character vector if information is found", {
   pinamar <- tripadvisor_places("Pinamar, Argentina", 10)
