@@ -1,0 +1,81 @@
+---
+title: "sgat"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sgat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# sgat
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of sgat package is to retrieve information from Google's searches' "Popular Times" and geolocation.
+
+## Installation
+
+You can install the released version of sgat package from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("sgat")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("matiaspoullain/sgat")
+```
+## Example
+
+Always start by initializing the driver, once per session:
+
+```{r example, message=FALSE, warning=FALSE}
+library(sgat)
+initialization_sgat()
+```
+
+This package was created to use it on restaurants, bars, etc... located in Ushuaia city, Tierra del Fuego, Argentina. You can retrieve a vector of them by using the next code:
+
+```{r restaurants, message=FALSE, warning=FALSE}
+restaurants <- ushuaia_restaurants()
+head(restaurants)
+```
+
+You can retrieve the information from some of these restaurants. The searches are not restricted to Ushuaia, but remember to be specific in your searches, specially if the location you are looking for is far away:
+
+```{r bar 1.1, message=FALSE, warning=FALSE}
+bar_1 <- sgat("coutume, 47 rue de babylone, 75007 paris, france", tiempo.espera = 20)
+head(bar_1)
+```
+Although, some other Google searches doesn't have the wanted information. In that case, NULL is returned:
+
+```{r bar 2.2, echo = TRUE, message=FALSE, warning=FALSE}
+bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia", tiempo.espera = 20)
+bar_2
+```
+
+You also can search for the information from a single day of the week:
+
+```{r bar 3.2, message=FALSE, warning=FALSE}
+bar_3 <- sgat_day("coutume, 47 rue de babylone, 75007 paris, france", "martes")
+head(bar_3)
+```
+
+A new function was added which let's the user to search for the most popular places of a city or area according to Tripadvisor:
+
+```{r tripadvisor, message=FALSE, warning=FALSE}
+pinamar <- tripadvisor_places("Pinamar", 10)
+pinamar
+```
