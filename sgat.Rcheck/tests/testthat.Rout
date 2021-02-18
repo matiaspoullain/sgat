@@ -1,0 +1,65 @@
+
+R version 4.0.2 (2020-06-22) -- "Taking Off Again"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(testthat)
+Warning message:
+package 'testthat' was built under R version 4.0.3 
+> library(sgat)
+> 
+> test_check("sgat")
+checking Selenium Server versions:
+BEGIN: PREDOWNLOAD
+BEGIN: DOWNLOAD
+BEGIN: POSTDOWNLOAD
+checking chromedriver versions:
+BEGIN: PREDOWNLOAD
+BEGIN: DOWNLOAD
+BEGIN: POSTDOWNLOAD
+checking geckodriver versions:
+BEGIN: PREDOWNLOAD
+BEGIN: DOWNLOAD
+BEGIN: POSTDOWNLOAD
+checking phantomjs versions:
+BEGIN: PREDOWNLOAD
+BEGIN: DOWNLOAD
+BEGIN: POSTDOWNLOAD
+== Skipped tests ===============================================================
+* On CRAN (3)
+
+== Failed tests ================================================================
+-- Error (test-initialization_sgat.R:4:3): Driver initializes ------------------
+Error: object 'remDr' not found
+Backtrace:
+    x
+ 1. \-testthat::expect_match(class(remDr), "remoteDriver") test-initialization_sgat.R:4:2
+ 2.   \-testthat::quasi_label(enquo(object), label, arg = "object")
+ 3.     \-rlang::eval_bare(expr, quo_get_env(quo))
+-- Error (test-initialization_sgat.R:8:3): canShowErrorClass -------------------
+Error: object 'remDr' not found
+-- Error (test-initialization_sgat.R:13:3): canShowRemoteDriver ----------------
+Error: object 'remDr' not found
+Backtrace:
+    x
+ 1. \-testthat::expect_equal(remDr$show()$browserName, "firefox") test-initialization_sgat.R:13:2
+ 2.   \-testthat::quasi_label(enquo(object), label, arg = "object")
+ 3.     \-rlang::eval_bare(expr, quo_get_env(quo))
+-- Error (test-initialization_sgat.R:17:3): canGetStatus -----------------------
+Error: object 'remDr' not found
+
+[ FAIL 4 | WARN 0 | SKIP 3 | PASS 2 ]
+Error: Test failures
+Execution halted

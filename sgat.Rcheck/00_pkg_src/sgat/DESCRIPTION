@@ -1,0 +1,28 @@
+Package: sgat
+Title: A Friendly and Forward Way for Extracting Information from
+        Google's "Popular Times", Returning it as Dataframes and Saving
+        it as .csv Files
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Matias",
+           family = "Poullain",
+           role = c("aut", "cre"),
+           email = "matias.poullain@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Once you've identified a real life place, such as a shop, a restaurant, a bar, etc. use this package to simulate a Google search and retrieve its "Popular Times" and geolocation information and save them in csv files. This package also downloads a list of restaurants and bars of Ushuaia city, Argentina.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown
+Config/testthat/edition: 3
+Imports: RSelenium, RCurl, qdapRegex, dplyr, stringr, data.table, plyr,
+        utils
+URL: https://github.com/matiaspoullain/sgat
+BugReports: https://github.com/matiaspoullain/sgat/issues
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2021-02-12 15:39:26 UTC; Matias
+Author: Matias Poullain [aut, cre] (YOUR-ORCID-ID)
+Maintainer: Matias Poullain <matias.poullain@gmail.com>
