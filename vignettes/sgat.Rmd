@@ -39,43 +39,19 @@ devtools::install_github("matiaspoullain/sgat")
 ```
 ## Example
 
-Always start by initializing the driver, once per session:
+Once you've download the information, you can use it to compare the mos popular hours in the week between places and there relative poositions. Here is an example of its use in Pinamar city in Argentina:
 
-```{r example, message=FALSE, warning=FALSE}
+https://matiaspoullain.shinyapps.io/Concurrencias_Pinamar/?_ga=2.194611503.386324231.1613673572-1914966656.1612880733
+
+All that information was recolected using the following code:
+```{r example pinamar, echo = TRUE, eval = FALSE, message=FALSE, warning=FALSE}
 library(sgat)
 initialization_sgat()
-```
 
-This package was created to use it on restaurants, bars, etc... located in Ushuaia city, Tierra del Fuego, Argentina. You can retrieve a vector of them by using the next code:
+rest.pinamar <- restaurantes_general("Pinamar, argentina")
 
-```{r restaurants, message=FALSE, warning=FALSE}
-restaurants <- ushuaia_restaurants()
-head(restaurants)
-```
+for(i in rest.pinamar){
+  sgat(i, tiempo.espera = 20, carpeta.guardado = "Pinamar")
+}
 
-You can retrieve the information from some of these restaurants. The searches are not restricted to Ushuaia, but remember to be specific in your searches, specially if the location you are looking for is far away:
-
-```{r bar 1.1, message=FALSE, warning=FALSE}
-bar_1 <- sgat("coutume, 47 rue de babylone, 75007 paris, france", tiempo.espera = 20)
-head(bar_1)
-```
-Although, some other Google searches doesn't have the wanted information. In that case, NULL is returned:
-
-```{r bar 2.2, echo = TRUE, message=FALSE, warning=FALSE}
-bar_2 <- sgat("Moustacchio, San Martín 298, Ushuaia", tiempo.espera = 20)
-bar_2
-```
-
-You also can search for the information from a single day of the week:
-
-```{r bar 3.2, message=FALSE, warning=FALSE}
-bar_3 <- sgat_day("coutume, 47 rue de babylone, 75007 paris, france", "martes")
-head(bar_3)
-```
-
-A new function was added which let's the user to search for the most popular places of a city or area according to Tripadvisor:
-
-```{r tripadvisor, message=FALSE, warning=FALSE}
-pinamar <- tripadvisor_places("Pinamar", 10)
-pinamar
 ```
