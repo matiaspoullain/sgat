@@ -50,6 +50,8 @@ initialization_sgat()
 
 rest.pinamar <- restaurantes_general("Pinamar, argentina")
 
+rest.pinamar <- paste(rest.pinamar, ", Pinamar, Argentina", sep = "")
+
 for(i in rest.pinamar){
   sgat(i, tiempo.espera = 20, carpeta.guardado = "Pinamar")
 }

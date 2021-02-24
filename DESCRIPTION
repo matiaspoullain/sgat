@@ -1,6 +1,6 @@
 Package: sgat
-Title: A Friendly and Forward Way for Extracting Information from Google's "Popular Times", Returning it as Dataframes and Saving it as Comma-Separated Values Files
-Version: 0.0.0.9000
+Title: Extract Information from Google's "Popular Times"
+Version: 0.9
 Authors@R: 
     person(given = "Matias",
            family = "Poullain",
