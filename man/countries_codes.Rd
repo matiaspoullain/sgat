@@ -5,14 +5,14 @@
 \alias{countries_codes}
 \title{Countries codes decodification}
 \format{
-A data frame with 136 rown and 2 variables:
+A data frame with 136 rows and 2 columns:
 \describe{
-\item{countries.codes}{Countries codes to be used in \code{\link{mobility_var}}}
+\item{country.code}{Countries codes to be used in \code{\link{mobility_var}}}
 \item{country.region}{Names of the countries or regions}
 }
 }
 \source{
-\data{countries_codes.rda}
+\url{https://www.google.com/covid19/mobility/}
 }
 \usage{
 countries_codes

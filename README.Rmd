@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of sgat package is to retrieve information from Google's searches' "Popular Times" and geolocation.
+The goal of sgat package is to retrieve information from Google's searches' "Popular Times" and geolocation and mobility reports.
 
 ## Installation
 
@@ -75,4 +75,18 @@ A new function was added which let's the user to search for the most popular pla
 ```{r tripadvisor, message=FALSE, warning=FALSE}
 pinamar <- tripadvisor_places("Pinamar, Argentina", 10)
 pinamar
+```
+
+
+You can also retrieve mobility information of any available countries. They can be found with:
+
+```{r ccountries codes, message=FALSE, warning=FALSE}
+countries_codes
+```
+
+The mobility information can be found using the \code{\link{mobility_var}} function. Here is an example for Argentina:
+
+```{r mobility, message=FALSE, warning=FALSE}
+argentina <- mobility_var("AR")
+argentina
 ```

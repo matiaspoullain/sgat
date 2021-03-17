@@ -1,1 +1,1 @@
-utils::globalVariables("remDr")
+utils::globalVariables(c("countries_codes", "remDr"))

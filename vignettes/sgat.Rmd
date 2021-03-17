@@ -39,11 +39,13 @@ devtools::install_github("matiaspoullain/sgat")
 ```
 ## Example
 
-Once you've download the information, you can use it to compare the mos popular hours in the week between places and there relative poositions. Here is an example of its use in Pinamar city in Argentina:
+Once you've download the information, you can use it to compare the most popular hours in the week between places and their relative positions. Here is an example of its use in two cities in Argentina:
 
-https://matiaspoullain.shinyapps.io/Concurrencias_Pinamar/?_ga=2.194611503.386324231.1613673572-1914966656.1612880733
+https://matiaspoullain.shinyapps.io/Concurrencias_movilidad/
 
 All that information was recolected using the following code:
+
+*Popular times for Pinamar
 ```{r example pinamar, echo = TRUE, eval = FALSE, message=FALSE, warning=FALSE}
 library(sgat)
 initialization_sgat()
@@ -55,5 +57,31 @@ rest.pinamar <- paste(rest.pinamar, ", Pinamar, Argentina", sep = "")
 for(i in rest.pinamar){
   sgat(i, tiempo.espera = 20, carpeta.guardado = "Pinamar")
 }
+
+```
+
+
+*Popular times for Ushuaia
+```{r example Ushuaia, echo = TRUE, eval = FALSE, message=FALSE, warning=FALSE}
+library(sgat)
+initialization_sgat()
+
+rest.Ushuaia <- restaurantes_general("Ushuaia, argentina")
+
+rest.Ushuaia <- paste(rest.Ushuaia, ", Ushuaia, Argentina", sep = "")
+
+for(i in rest.Ushuaia){
+  sgat(i, tiempo.espera = 20, carpeta.guardado = "Ushuaia")
+}
+
+```
+
+
+Mobility information was also recolected for Argentina:
+```{r example mobilityr, echo = TRUE, eval = FALSE, message=FALSE, warning=FALSE}
+library(sgat)
+initialization_sgat()
+
+argentina <- mobility_var("AR")
 
 ```

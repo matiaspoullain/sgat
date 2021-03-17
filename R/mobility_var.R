@@ -1,6 +1,6 @@
 #' Download mobility variation data from one or many countries
 #'
-#' @param country.code Country code, vector of countries codes or "All". Countries codes can be found in "countries.codes". If "All", data from all countries will be downloaded
+#' @param country.code Character class country code, vector of countries codes or "All". Countries codes can be found in "countries.codes". If "All", data from all countries will be downloaded
 #'
 #' @return Data frame with information of the mobility variations grouped by country, sub-region, date and type of activity
 #' @export
@@ -21,7 +21,7 @@ mobility_var <- function(country.code){
     stop('"country.code" must be specified')
   }
   if (sum(!(country.code %in% countries_codes$country.code)) > 0) {
-    stop('"country.code" must be a valid country code, a vector of valid country codes or "All"')
+    stop('"country.code" must be a valid country code, a vector of valid countries codes or "All"')
   }
   URL <- "https://www.gstatic.com/covid19/mobility/Region_Mobility_Report_CSVs.zip"
   temp <- tempfile()

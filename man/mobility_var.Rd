@@ -7,7 +7,7 @@
 mobility_var(country.code)
 }
 \arguments{
-\item{country.code}{Country code, vector of countries codes or "All". Countries codes can be found in "countries.codes". If "All", data from all countries will be downloaded}
+\item{country.code}{Character class country code, vector of countries codes or "All". Countries codes can be found in "countries.codes". If "All", data from all countries will be downloaded}
 }
 \value{
 Data frame with information of the mobility variations grouped by country, sub-region, date and type of activity

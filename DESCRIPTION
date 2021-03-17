@@ -1,6 +1,6 @@
 Package: sgat
 Title: Extract Information from Google's "Popular Times"
-Version: 0.9
+Version: 0.91
 Authors@R: 
     person(given = "Matias",
            family = "Poullain",
