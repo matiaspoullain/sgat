@@ -51,7 +51,14 @@ sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
         loc.hora <- data.table::data.table(hora, data.frame(stringr::str_locate_all(source, "data-hour=")))
         data.table::setkey(loc.concurrencia, "start") # para hacer el join
         data.table::setkey(loc.hora, "start")
-        df <- as.data.frame(loc.concurrencia[loc.hora, roll = "nearest"]) # join menos estricto, joinea segun cercania de caracteres
+        df <- 1
+        class(df) <- "try-error"
+        intentos <- 20
+        while(class(df) == "tyr-error" | intentos <= 20){
+          df <- try(as.data.frame(loc.concurrencia[loc.hora,
+                                                   roll = "nearest"]), silent = TRUE)
+          intentos <- intentos + 1
+        }
         df <- df[, c(4, 1)]
       } else {
         df <- data.frame(hora, concurrencia) # si no hay esa concurrencia de mas, directamente junto la hora y la concurrencia
