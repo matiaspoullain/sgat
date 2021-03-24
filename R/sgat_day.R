@@ -20,7 +20,8 @@ sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
   remDr$open(silent = TRUE) # abre firefox
   remDr$navigate("https://www.google.com.ar") # va a google.com.ar
   webElem <- remDr$findElement(using = "name", value = "q") # selecciona el recuadro de busqueda
-  webElem$sendKeysToElement(list(paste(lugar.a.buscar, dia.semana), "\uE007")) # escribe el lugar.a.buscar y hace la busqueda
+  webElem$sendKeysToElement(list(paste(lugar.a.buscar, ", horarios", dia.semana), "\uE007")) # escribe el lugar.a.buscar y hace la busqueda
+  Sys.sleep(2)
 
   apertura <- NA_character_ # para empezar el loop que sigue
   concurrencia <- NA_character_ # para empezar el loop que sigue
