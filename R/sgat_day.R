@@ -36,7 +36,7 @@ sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
     if (!is.na(concurrencia[1])) {
       coordenadas <- qdapRegex::ex_between(source, 'data-url="/maps/place/', ",15z")
       remDr$close() # cierra firefox, ya no se necesita
-
+      concurrencia <- concurrencia[!grepl("VKx1id", concurrencia, fixed = TRUE)]
       coordenadas <- sub(".*@", "", coordenadas)
       latitud <- sub(",.*", "", coordenadas)
       longitud <- sub(".*,", "", coordenadas)
@@ -44,25 +44,7 @@ sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
       hora <- qdapRegex::ex_between(source, "data-hour=", " jsaction")[[1]] # extrae la hora a la que corresponden las concurrencias
       hora <- as.numeric(gsub("[^0-9.-]", "", hora)) # me quedo solo con la parte interesante del string
 
-      # En este punto se genera un problema: si la busqueda se realiza en una hora en la que el local esta abierto, google agrega adem?s la concurrencia actual observada, por lo que hay mas numeros de concurrencia que de horarios, este if sirve para ignorar ese numero de mas
-
-      if (length(concurrencia) != length(hora)) {
-        loc.concurrencia <- data.table::data.table(concurrencia, data.frame(stringr::str_locate_all(source, 'class="cwiwob'))) # ubicaciones de los characteres encontrados
-        loc.hora <- data.table::data.table(hora, data.frame(stringr::str_locate_all(source, "data-hour=")))
-        data.table::setkey(loc.concurrencia, "start") # para hacer el join
-        data.table::setkey(loc.hora, "start")
-        df <- 1
-        class(df) <- "try-error"
-        intentos <- 20
-        while(class(df) == "tyr-error" | intentos <= 20){
-          df <- try(as.data.frame(loc.concurrencia[loc.hora,
-                                                   roll = "nearest"]), silent = TRUE)
-          intentos <- intentos + 1
-        }
-        df <- df[, c(4, 1)]
-      } else {
-        df <- data.frame(hora, concurrencia) # si no hay esa concurrencia de mas, directamente junto la hora y la concurrencia
-      }
+      df <- data.frame(hora, concurrencia) # si no hay esa concurrencia de mas, directamente junto la hora y la concurrencia
       # aca hago mas linda la tabla
       df$lugar <- lugar.a.buscar
       df$dia <- dplyr::case_when(
