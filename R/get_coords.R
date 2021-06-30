@@ -25,7 +25,7 @@ get_coords <- function(lugares.a.buscar, tiempo.espera = 10) {
 
     coordenadas <- NA_character_ # para empezar el loop que sigue
     x <- 0
-    while (x <= tiempo.espera | is.na(coordenadas)) {
+    while (x <= tiempo.espera & is.na(coordenadas)) {
       source <- remDr$getPageSource()[[1]] # codigo de fuente de la pagina de google
       coordenadas <- qdapRegex::ex_between(source, 'data-url="/maps/place/', ",15z")
       x <- x + 1
