@@ -8,7 +8,7 @@
 #' initialization_sgat()
 #' }
 initialization_sgat <- function() {
-  driver <- RSelenium::rsDriver(browser = "firefox", geckover = "0.28.0")
+  driver <- RSelenium::rsDriver(browser = "firefox", geckover = "latest")
   driver$client$close()
   assign_to_global <- function(func, pos = 1) {
     assign("remDr", func, envir = as.environment(pos))

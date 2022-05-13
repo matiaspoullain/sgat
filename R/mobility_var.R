@@ -1,6 +1,7 @@
 #' Download mobility variation data from one or many countries
 #'
 #' @param country.code Character class country code, vector of countries codes or "All". Countries codes can be found in "countries.codes". If "All", data from all countries will be downloaded
+#' @param year Numeric vector of years of interest. Only available options: 2020, 2021 and 2022. Default: 2020:2022
 #'
 #' @return Data frame with information of the mobility variations grouped by country, sub-region, date and type of activity
 #' @export
@@ -16,9 +17,12 @@
   #' allCountries <- mobility_var("All")
   #' head(allCountries)
   #' }
-mobility_var <- function(country.code){
+mobility_var <- function(country.code, year = 2020:2022){
   if (missing(country.code)) {
     stop('"country.code" must be specified')
+  }
+  if (min(year) < 2020 | max(year) > 2022 | !is.numeric(year)) {
+    stop('"year" must be a numeric vector whose values are between 2020 and 2022')
   }
   if (sum(!(country.code %in% countries_codes$country.code)) > 0) {
     stop('"country.code" must be a valid country code, a vector of valid countries codes or "All"')
@@ -29,18 +33,24 @@ mobility_var <- function(country.code){
   if(length(country.code > 1)){
     data <- data.frame()
     for (i in country.code){
-      one.country <- utils::read.csv(unz(temp, paste("2020_", i,"_Region_Mobility_Report.csv", sep = "")), encoding = "UTF-8")
-      data <- rbind(data, one.country)
+      for(j in year){
+        one.country <- utils::read.csv(unz(temp, paste(j, "_", i,"_Region_Mobility_Report.csv", sep = "")), encoding = "UTF-8")
+        data <- rbind(data, one.country)
+      }
     }
   }else if(country.code == "All"){
     nombres <- utils::unzip(temp, list = TRUE)$Name
+    nombres <- nombres[grepl(paste(year, collapse = "|"), nombres)]
     data <- data.frame()
     for (i in nombres){
       one.country <- utils::read.csv(unz(temp, i), encoding = "UTF-8")
       data <- rbind(data, one.country)
     }
   } else {
-    data <- utils::read.csv(unz(temp, paste("2020_", country.code,"_Region_Mobility_Report.csv", sep = "")), encoding = "UTF-8")
+    for(j in year){
+      one.year <- utils::read.csv(unz(temp, paste(j, country.code,"Region_Mobility_Report.csv", sep = "_")), encoding = "UTF-8")
+      data <- rbind(data, one.year)
+    }
   }
   unlink(temp)
   data[is.na(data$country_region_code), "country_region_code"] <- "NA"
