@@ -4,10 +4,12 @@
 \alias{mobility_var}
 \title{Download mobility variation data from one or many countries}
 \usage{
-mobility_var(country.code)
+mobility_var(country.code, year = 2020:2022)
 }
 \arguments{
 \item{country.code}{Character class country code, vector of countries codes or "All". Countries codes can be found in "countries.codes". If "All", data from all countries will be downloaded}
+
+\item{year}{Numeric vector of years of interest. Only available options: 2020, 2021 and 2022. Default: 2020:2022}
 }
 \value{
 Data frame with information of the mobility variations grouped by country, sub-region, date and type of activity

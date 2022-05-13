@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: 
     testthat (>= 3.0.0),
     knitr,
@@ -26,7 +26,11 @@ Imports:
     stringr,
     data.table,
     plyr,
-    utils
+    utils,
+    shiny,
+    shinyWidgets,
+    ggplot2,
+    tidyr
 URL: https://github.com/matiaspoullain/sgat
 BugReports: https://github.com/matiaspoullain/sgat/issues
 VignetteBuilder: knitr
