@@ -30,7 +30,10 @@ Imports:
     shiny,
     shinyWidgets,
     ggplot2,
-    tidyr
+    tidyr,
+    purrr,
+    htmltools,
+    plotly
 URL: https://github.com/matiaspoullain/sgat
 BugReports: https://github.com/matiaspoullain/sgat/issues
 VignetteBuilder: knitr
