@@ -24,75 +24,91 @@ visualize_mobility_data <- function(mobility_data){
   paises <- por.pais[, unique(country_region)]
   paises <- paises[base::order(paises)]
 
+  getPalette <- colorRampPalette(RColorBrewer::brewer.pal(9, "Set1"))
 
-  ui <- shiny::fluidPage(
+  gg.colors <- function(n.factors){
+    if(n.factors < 10){
+      ggplot2::scale_color_brewer(palette = "Set1")
+    }else{
+      ggplot2::scale_color_manual(values = getPalette(n.factors))
 
-    shiny::titlePanel("Mobility data visualization"),
+    }
+  }
 
-    shiny::tabsetPanel(type = "tabs",
-                       shiny::tabPanel("By country",
-                                       shiny::fluidRow(
-                                         shinyWidgets::radioGroupButtons(
-                                           inputId = "comparacion_pais",
-                                           label = "Select comparison",
-                                           choices = c("By country", "By place"),
-                                           justified = TRUE)
-                                       ),
-                                       shiny::fluidRow(
-                                         plotly::plotlyOutput("plot_pais", height = "auto") %>% shinycssloaders::withSpinner(hide.ui = FALSE)
-                                       )
-                       ),
-                       shiny::tabPanel("By sub-regions 1",
-                                       shiny::fluidRow(
-                                         shiny::column(6,
-                                                       shinyWidgets::pickerInput(
-                                                         inputId = "input_pais",
-                                                         label = "Select country",
-                                                         choices = paises,
-                                                         options = list(
-                                                           `live-search` = TRUE)
-                                                       ),
-                                                       align = "center"
-                                         )
-                                         ,
-                                         shiny::column(6,
-                                                       shinyWidgets::radioGroupButtons(
-                                                         inputId = "comparacion_sr1",
-                                                         label = "Select comparison",
-                                                         choices = c("By sub-region 1", "By place"),
-                                                         justified = TRUE),
-                                                       align = "center")
-                                       ),
-                                       shiny::fluidRow(
-                                         plotly::plotlyOutput("plot_sr1") %>% shinycssloaders::withSpinner(hide.ui = FALSE)
-                                       )
-                       ),
-                       shiny::tabPanel("By sub-regions 2",
-                                       shiny::fluidRow(
-                                         shiny::column(4,
-                                                       shinyWidgets::pickerInput(
-                                                         inputId = "input_pais2",
-                                                         label = "Select country",
-                                                         choices = paises,
-                                                         options = list(
-                                                           `live-search` = TRUE) %>% shinycssloaders::withSpinner(hide.ui = FALSE)
-                                                       )
-                                         ),
-                                         shiny::column(4,
-                                                       shiny::uiOutput('picker_sr1')
-                                         ),
-                                         shiny::column(4,
-                                                       shinyWidgets::radioGroupButtons(
-                                                         inputId = "comparacion_sr2",
-                                                         label = "Select comparison",
-                                                         choices = c("By sub-region 2", "By place"),
-                                                         justified = TRUE),
-                                                       align = "center")),
-                                       shiny::fluidRow(
-                                         plotly::plotlyOutput("plot_sr2")
-                                       )
-                       )
-    )
+
+  ui <- shiny::fluidPage(theme = shinythemes::shinytheme("cosmo"),
+
+                         shiny::navbarPage(title = "Mobility data visualization",
+                                           position = "static-top",
+                                           collapsible = TRUE,
+                                           shiny::tabPanel("By country",
+                                                           shiny::fluidRow(
+                                                             shiny::column(12,
+                                                                           shinyWidgets::radioGroupButtons(
+                                                                             inputId = "comparacion_pais",
+                                                                             label = "Select comparison",
+                                                                             choices = c("By country", "By place"),
+                                                                             justified = FALSE)
+                                                             ),
+                                                             align = "center"
+                                                           ),
+                                                           shiny::fluidRow(
+                                                             plotly::plotlyOutput("plot_pais", height = "auto") %>% shinycssloaders::withSpinner(hide.ui = FALSE)
+                                                           )
+                                           ),
+                                           shiny::tabPanel("By sub-regions 1",
+                                                           shiny::fluidRow(
+                                                             shiny::column(6,
+                                                                           shinyWidgets::pickerInput(
+                                                                             inputId = "input_pais",
+                                                                             label = "Select country",
+                                                                             choices = paises,
+                                                                             options = list(
+                                                                               `live-search` = TRUE,
+                                                                               `label-align-center` = TRUE)
+                                                                           ),
+                                                                           align = "center"
+                                                             )
+                                                             ,
+                                                             shiny::column(6,
+                                                                           shinyWidgets::radioGroupButtons(
+                                                                             inputId = "comparacion_sr1",
+                                                                             label = "Select comparison",
+                                                                             choices = c("By sub-region 1", "By place"),
+                                                                             justified = FALSE),
+                                                                           align = "center")
+                                                           ),
+                                                           shiny::fluidRow(
+                                                             plotly::plotlyOutput("plot_sr1") %>% shinycssloaders::withSpinner(hide.ui = FALSE)
+                                                           )
+                                           ),
+                                           shiny::tabPanel("By sub-regions 2",
+                                                           shiny::fluidRow(
+                                                             shiny::column(4,
+                                                                           shinyWidgets::pickerInput(
+                                                                             inputId = "input_pais2",
+                                                                             label = "Select country",
+                                                                             choices = paises,
+                                                                             options = list(
+                                                                               `live-search` = TRUE,
+                                                                               `label-align-center` = TRUE)
+                                                                           ),
+                                                                           align = "center"),
+                                                             shiny::column(4,
+                                                                           shiny::uiOutput('picker_sr1'),
+                                                                           align = "center"),
+                                                             shiny::column(4,
+                                                                           shinyWidgets::radioGroupButtons(
+                                                                             inputId = "comparacion_sr2",
+                                                                             label = "Select comparison",
+                                                                             choices = c("By sub-region 2", "By place"),
+                                                                             justified = FALSE),
+                                                                           align = "center")),
+                                                           shiny::fluidRow(
+                                                             plotly::plotlyOutput("plot_sr2") %>% shinycssloaders::withSpinner(hide.ui = FALSE)
+                                                           )
+                                           )
+                         )
 
   )
 
@@ -103,22 +119,27 @@ visualize_mobility_data <- function(mobility_data){
 
 
 
+
       if(input$comparacion_pais == "By country"){
+
+
         plot.pais <- por.pais %>%
           ggplot2::ggplot(ggplot2::aes(x = as.Date(date), y = valor, col = country_region, text = label)) +
           ggplot2::geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.8) +
           ggplot2::geom_line(alpha = 0.8) +
           ggplot2::facet_wrap(tipo~., ncol = 2) +
-          ggplot2::labs(x = "Date", y = "Value", col = "Country") +
-          ggplot2::theme_bw()
+          ggplot2::labs(x = "Date", y = "Value (%)", col = "Country") +
+          ggplot2::theme_bw() +
+          gg.colors(data.table::uniqueN(por.pais$country_region))
       }else{
         plot.pais <- por.pais %>%
           ggplot2::ggplot(ggplot2::aes(x = as.Date(date), y = valor, col = tipo, text = label)) +
           ggplot2::geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.8) +
           ggplot2::geom_line(alpha = 0.8) +
           ggplot2::facet_wrap(country_region_code~., ncol = 2) +
-          ggplot2::labs(x = "Date", y = "Value", col = "Activity") +
-          ggplot2::theme_bw()
+          ggplot2::labs(x = "Date", y = "Value (%)", col = "Activity") +
+          ggplot2::theme_bw() +
+          gg.colors(data.table::uniqueN(por.pais$tipo))
       }
 
       ggrows <- plot.pais %>%
@@ -157,16 +178,18 @@ visualize_mobility_data <- function(mobility_data){
           ggplot2::geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.8) +
           ggplot2::geom_line(alpha = 0.8) +
           ggplot2::facet_wrap(tipo~., ncol = 2) +
-          ggplot2::labs(x = "Date", y = "Value", col = "Sub-region 1") +
-          ggplot2::theme_bw()
+          ggplot2::labs(x = "Date", y = "Value (%)", col = "Sub-region 1") +
+          ggplot2::theme_bw() +
+          gg.colors(data.table::uniqueN(por.sr1()$sub_region_1))
       }else{
         plot.sr1 <- por.sr1() %>%
           ggplot2::ggplot(ggplot2::aes(x = as.Date(date), y = valor, col = tipo, text = label)) +
           ggplot2::geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.8) +
           ggplot2::geom_line(alpha = 0.8) +
           ggplot2::facet_wrap(sub_region_1~., ncol = 2) +
-          ggplot2::labs(x = "Date", y = "Value", col = "Activity") +
-          ggplot2::theme_bw()
+          ggplot2::labs(x = "Date", y = "Value (%)", col = "Activity") +
+          ggplot2::theme_bw() +
+          gg.colors(data.table::uniqueN(por.sr1()$tipo))
       }
 
       ggrows <- plot.sr1 %>%
@@ -227,22 +250,28 @@ visualize_mobility_data <- function(mobility_data){
 
     output$plot_sr2 <- plotly::renderPlotly({
 
+      validate(
+        need(input$input_sr1 != "", "")
+      )
+
       if(input$comparacion_sr2 == "By sub-region 2"){
         plot.sr2 <- por.sr2() %>%
           ggplot2::ggplot(ggplot2::aes(x = as.Date(date), y = valor, col = sub_region_2, text = label)) +
           ggplot2::geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.8) +
           ggplot2::geom_line(alpha = 0.8) +
           ggplot2::facet_wrap(tipo~., ncol = 2) +
-          ggplot2::labs(x = "Date", y = "Value", col = "Sub-region 2") +
-          ggplot2::theme_bw()
+          ggplot2::labs(x = "Date", y = "Value (%)", col = "Sub-region 2") +
+          ggplot2::theme_bw() +
+          gg.colors(data.table::uniqueN(por.sr2()$sub_region_2))
       }else{
         plot.sr2 <- por.sr2() %>%
           ggplot2::ggplot(ggplot2::aes(x = as.Date(date), y = valor, col = tipo, text = label)) +
           ggplot2::geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.8) +
           ggplot2::geom_line(alpha = 0.8) +
           ggplot2::facet_wrap(sub_region_2~., ncol = 2) +
-          ggplot2::labs(x = "Date", y = "Value", col = "Activity") +
-          ggplot2::theme_bw()
+          ggplot2::labs(x = "Date", y = "Value (%)", col = "Activity") +
+          ggplot2::theme_bw() +
+          gg.colors(data.table::uniqueN(por.sr2()$tipo))
       }
 
       ggrows <- plot.sr2 %>%
