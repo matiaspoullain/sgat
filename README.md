@@ -1,3 +1,4 @@
+[![](https://cranlogs.r-pkg.org/badges/sgat)](https://cran.r-project.org/package=sgat)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
