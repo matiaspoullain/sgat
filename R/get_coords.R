@@ -28,6 +28,12 @@ get_coords <- function(lugares.a.buscar, tiempo.espera = 10) {
     while (x <= tiempo.espera & is.na(coordenadas)) {
       source <- remDr$getPageSource()[[1]] # codigo de fuente de la pagina de google
       coordenadas <- qdapRegex::ex_between(source, 'data-url="/maps/place/', ",15z")
+      if(is.na(coordenadas[[1]])){
+        text.antes <- paste0("/maps/place/", gsub(" ", "+", i), "/@")
+        coordenadas <- qdapRegex::ex_between(source, text.antes, "/")
+        coordenadas[[1]] <- sub("^([^,]*,[^,]*),.*", "\\1", coordenadas[[1]])
+      }
+
       x <- x + 1
     }
     remDr$close() # cierra firefox, ya no se necesita
