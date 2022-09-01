@@ -41,7 +41,7 @@ sgat_day <- function(lugar.a.buscar, dia.semana, tiempo.espera = 10) {
       latitud <- sub(",.*", "", coordenadas)
       longitud <- sub(".*,", "", coordenadas)
       concurrencia <- as.numeric(sub(".*:", "", concurrencia)) # me quedo solo con la parte interesante del string
-      hora <- qdapRegex::ex_between(source, "data-hour=", " jsaction")[[1]] # extrae la hora a la que corresponden las concurrencias
+      hora <- qdapRegex::ex_between(source, 'data-hour=\"', '\"')[[1]] # extrae la hora a la que corresponden las concurrencias
       hora <- as.numeric(gsub("[^0-9.-]", "", hora)) # me quedo solo con la parte interesante del string
 
       df <- data.frame(hora, concurrencia) # si no hay esa concurrencia de mas, directamente junto la hora y la concurrencia
